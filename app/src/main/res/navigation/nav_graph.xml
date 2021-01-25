@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/plansFragment">
+
+    <fragment
+        android:id="@+id/plansFragment"
+        android:name="pakiet.arkadiuszzimny.expenotes_v1.ui.fragments.PlansFragment"
+        android:label="PlansFragment" >
+        <action
+            android:id="@+id/action_plansFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/converterFragment"
+        android:name="pakiet.arkadiuszzimny.expenotes_v1.ui.fragments.ConverterFragment"
+        android:label="ConverterFragment" >
+        <action
+            android:id="@+id/action_converterFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doneFragment"
+        android:name="pakiet.arkadiuszzimny.expenotes_v1.ui.fragments.DoneFragment"
+        android:label="DoneFragment" >
+        <action
+            android:id="@+id/action_doneFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="pakiet.arkadiuszzimny.expenotes_v1.ui.fragments.InfoFragment"
+        android:label="InfoFragment" />
+</navigation>

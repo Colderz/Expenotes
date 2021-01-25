@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="2 567 zł"
             android:textColor="@android:color/white"
@@ -26,52 +26,50 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.058"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.768" />
+            app:layout_constraintVertical_bias="0.785" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Potrzebne środki"
+            android:text="Needed wherewithal"
             android:textColor="@android:color/white"
             android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintHorizontal_bias="0.081"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.578" />
+            app:layout_constraintVertical_bias="0.582" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Portfel"
+            android:layout_marginStart="24dp"
+            android:text="Wallet"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.107" />
+            app:layout_constraintVertical_bias="0.113" />
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="18 000 000 zł"
+            android:text="18 161 zł"
             android:textColor="@android:color/white"
             android:textSize="27sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.065"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.248" />
+            app:layout_constraintVertical_bias="0.247" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -92,21 +90,22 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_layout">
 
         <fragment
-            android:id="@+id/newsNavHostFragment"
+            android:id="@+id/NavHostFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:defaultNavHost="true" />
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
 
     </FrameLayout>
 
 
     <nl.joery.animatedbottombar.AnimatedBottomBar
+
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="46dp"
@@ -116,15 +115,21 @@
         app:abb_badgeBackgroundColor="#FF9800"
         app:abb_indicatorAppearance="round"
         app:abb_indicatorColor="#FFC107"
+        app:abb_indicatorHeight="5dp"
         app:abb_rippleColor="#03A9F4"
+        app:abb_selectedIndex="0"
         app:abb_selectedTabType="text"
         app:abb_tabColorDisabled="#B3B3B3"
         app:abb_tabColorSelected="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:abb_selectedIndex="0"
         app:abb_tabs="@menu/bottom_navigation_menu"
-        app:abb_indicatorHeight="5dp"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.06" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

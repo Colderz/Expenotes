@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/item1"
+    <item android:id="@+id/plans"
         android:title="@string/plans"
         android:icon="@drawable/ic_plans" />
 
-    <item android:id="@+id/item2"
+    <item android:id="@+id/converter"
         android:title="@string/conv"
         android:icon="@drawable/ic_conv" />
 
-    <item android:id="@+id/item3"
+    <item android:id="@+id/done"
         android:title="@string/done"
         android:icon="@drawable/ic_done" />
 
