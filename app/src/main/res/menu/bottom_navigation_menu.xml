@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/item1"
+        android:title="@string/plans"
+        android:icon="@drawable/ic_plans" />
+
+    <item android:id="@+id/item2"
+        android:title="@string/conv"
+        android:icon="@drawable/ic_conv" />
+
+    <item android:id="@+id/item3"
+        android:title="@string/done"
+        android:icon="@drawable/ic_done" />
+
+</menu>
