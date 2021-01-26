@@ -124,8 +124,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/bottom_navigation_menu"
-        app:itemIconTint="@android:color/black"
-        app:itemIconSize="24dp"/>
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemIconSize="24dp"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
