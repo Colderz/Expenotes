@@ -7,7 +7,4 @@ import pakiet.arkadiuszzimny.expenotes_v1.R
 
 class PlansFragment : Fragment(R.layout.fragment_plans) {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 }
