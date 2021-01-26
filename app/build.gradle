@@ -69,7 +69,4 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
     implementation 'androidx.core:core-ktx:1.0.0'
-
-    //AnimatedBottomBar
-    implementation 'nl.joery.animatedbottombar:library:1.0.9'
 }

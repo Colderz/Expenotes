@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
-import nl.joery.animatedbottombar.AnimatedBottomBar
 import pakiet.arkadiuszzimny.expenotes_v1.ui.fragments.ConverterFragment
 import pakiet.arkadiuszzimny.expenotes_v1.ui.fragments.DoneFragment
 import pakiet.arkadiuszzimny.expenotes_v1.ui.fragments.PlansFragment as PlansFragment
