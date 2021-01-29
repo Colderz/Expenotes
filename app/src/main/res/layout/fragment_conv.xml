@@ -20,7 +20,7 @@
             android:layout_marginTop="7dp"
             app:cardCornerRadius="25dp"
             android:clickable="true"
-            android:layout_marginHorizontal="12dp"
+            android:layout_marginHorizontal="8dp"
             android:layout_marginBottom="2dp">
 
             <LinearLayout
@@ -63,7 +63,7 @@
             android:layout_height="100dp"
             android:layout_marginTop="7dp"
             app:cardCornerRadius="25dp"
-            android:layout_marginHorizontal="12dp">
+            android:layout_marginHorizontal="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -94,13 +94,19 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardCornerRadius="17dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp">
+        android:layout_height="60dp"
+        app:cardCornerRadius="13dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </LinearLayout>
+
+
     </androidx.cardview.widget.CardView>
-
-
 
 </LinearLayout>
