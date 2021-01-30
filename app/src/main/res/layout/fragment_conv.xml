@@ -127,14 +127,30 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/command"
-                android:layout_gravity="center_vertical"
-                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
-                android:textSize="10sp"
-                android:paddingStart="22dp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/command"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                    android:textSize="10sp"
+                    android:paddingHorizontal="22dp"
+                    android:paddingTop="5dp"/>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/currency_codes"
+                    android:layout_gravity="center_horizontal"/>
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -192,14 +208,29 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/command"
-                android:layout_gravity="center_vertical"
-                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
-                android:textSize="10sp"
-                android:paddingStart="22dp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/command"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                    android:textSize="10sp"
+                    android:paddingHorizontal="22dp"
+                    android:paddingTop="5dp"/>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/currency_codes"
+                    android:layout_gravity="center_horizontal"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

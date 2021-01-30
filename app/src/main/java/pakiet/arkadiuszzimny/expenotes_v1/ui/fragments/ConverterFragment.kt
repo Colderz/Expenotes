@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.NumberPicker
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_conv.*
 import kotlinx.android.synthetic.main.fragment_conv.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
 
