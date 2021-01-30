@@ -9,7 +9,6 @@ import android.widget.NumberPicker
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_conv.view.*
-import kotlinx.android.synthetic.main.fragment_converter.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
 
 class ConverterFragment : Fragment() {

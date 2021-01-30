@@ -3,4 +3,5 @@
     <string name="plans">Plans</string>
     <string name="conv">Converter</string>
     <string name="done">Completed</string>
+    <string name="command">Touch to select a currency</string>
 </resources>

@@ -1,6 +1,8 @@
 package pakiet.arkadiuszzimny.expenotes_v1.ui.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +41,20 @@ class AmountDialogFragment: DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         setupView(view)
         setupClickListener(view)
+        etFrom.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
 
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                s.let {
+                    tvmainAmount.text = s
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
     }
 
     private fun setupView(view: View) {
@@ -50,6 +65,7 @@ class AmountDialogFragment: DialogFragment() {
 
     private fun setupClickListener(view: View) {
         view.savebtn.setOnClickListener {
+
             dismiss()
         }
     }
