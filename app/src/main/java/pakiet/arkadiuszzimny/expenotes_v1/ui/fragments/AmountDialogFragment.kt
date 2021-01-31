@@ -1,5 +1,7 @@
 package pakiet.arkadiuszzimny.expenotes_v1.ui.fragments
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -67,6 +69,9 @@ class AmountDialogFragment: DialogFragment() {
 
     private fun setupClickListener(view: View) {
         view.savebtn.setOnClickListener {
+            var intent = Intent()
+                intent.putExtra("value", etFrom.text.toString())
+            targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
             dismiss()
         }
     }

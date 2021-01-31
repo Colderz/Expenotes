@@ -95,7 +95,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         app:cardCornerRadius="13dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="5dp">
@@ -176,7 +176,7 @@
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         app:cardCornerRadius="13dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="5dp">
@@ -228,7 +228,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:entries="@array/currency_codes"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="center_horizontal" />
 
             </LinearLayout>
 

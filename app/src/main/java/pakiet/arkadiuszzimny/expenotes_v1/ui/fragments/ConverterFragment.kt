@@ -1,5 +1,7 @@
 package pakiet.arkadiuszzimny.expenotes_v1.ui.fragments
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -14,6 +16,8 @@ import pakiet.arkadiuszzimny.expenotes_v1.R
 
 class ConverterFragment : Fragment() {
 
+    val ENTERAMOUNT_FRAGMENT = 1
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,11 +27,23 @@ class ConverterFragment : Fragment() {
         inputFragmentView.tvAmountLeft.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 var dialogInstance = AmountDialogFragment.newInstance("Amount", "Editing")
+                dialogInstance.setTargetFragment(this@ConverterFragment, ENTERAMOUNT_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-                dialogInstance.show(parentFragmentManager, AmountDialogFragment.TAG)
+                dialogInstance.show(parentFragmentManager.beginTransaction(), AmountDialogFragment.TAG)
             }
         })
         return inputFragmentView
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when(requestCode) {
+            ENTERAMOUNT_FRAGMENT -> if(resultCode == Activity.RESULT_OK) {
+                var bundle = data!!.extras
+                var resultValue = bundle!!.getString("value","error")
+                tvAmountLeft.text = resultValue
+            }
+        }
     }
 
 
