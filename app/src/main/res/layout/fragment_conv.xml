@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="#f2f2f2"
     android:descendantFocusability="blocksDescendants">
@@ -36,7 +37,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="255"
+                    tools:text="255"
+                    android:text="0"
                     android:textColor="@android:color/black"
                     android:textSize="31sp"
                     android:textStyle="bold"
@@ -79,7 +81,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="42"
+                    tools:text="42"
+                    android:text="0"
                     android:textColor="@android:color/black"
                     android:textSize="31sp"
                     android:textStyle="bold" />
@@ -146,6 +149,7 @@
                     android:paddingTop="5dp"/>
 
                 <Spinner
+                    android:id="@+id/spinnerFrom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:entries="@array/currency_codes"
@@ -227,6 +231,7 @@
                     android:paddingTop="5dp"/>
 
                 <Spinner
+                    android:id="@+id/spinnerTo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:entries="@array/currency_codes"

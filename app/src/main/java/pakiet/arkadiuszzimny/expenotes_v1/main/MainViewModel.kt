@@ -10,6 +10,9 @@ import pakiet.arkadiuszzimny.expenotes_v1.data.models.Rates
 import pakiet.arkadiuszzimny.expenotes_v1.util.DispatcherProvider
 import pakiet.arkadiuszzimny.expenotes_v1.util.Resource
 import java.lang.Math.round
+import java.math.BigDecimal
+import java.math.RoundingMode
+import kotlin.math.round
 
 class MainViewModel @ViewModelInject constructor(
     private val repository: MainRepository,
@@ -47,9 +50,10 @@ class MainViewModel @ViewModelInject constructor(
                     if(rate == null) {
                         _conversion.value = CurrencyEvent.Failure("Błąd")
                     } else {
-                        val convertedCurrency = round(fromAmount * rate * 100) / 100
+                        val convertedCurrency = fromAmount * rate
+                        val decimal = BigDecimal(convertedCurrency).setScale(2, RoundingMode.HALF_EVEN)
                         _conversion.value = CurrencyEvent.Success(
-                            "$convertedCurrency"
+                            "$decimal"
                         )
                     }
                 }

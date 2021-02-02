@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.NumberPicker
 import androidx.activity.viewModels
 import androidx.fragment.app.DialogFragment
@@ -66,7 +67,13 @@ class ConverterFragment : Fragment() {
                 tvToCurrency.text.toString()
             )
         }
+        inputFragmentView.spinnerFrom.setSelection(20)
+        inputFragmentView.spinnerTo.setSelection(1)
         return inputFragmentView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
