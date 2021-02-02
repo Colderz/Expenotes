@@ -43,6 +43,7 @@
                     android:clickable="true"/>
 
                 <TextView
+                    android:id="@+id/tvFromCurrency"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -84,6 +85,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvToCurrency"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -254,5 +256,15 @@
 
 
     </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_dialog"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="7dp"
+        android:text="Convert"/>
 
 </LinearLayout>
