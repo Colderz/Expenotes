@@ -67,14 +67,17 @@ class ConverterFragment : Fragment() {
                 tvToCurrency.text.toString()
             )
         }
-        inputFragmentView.spinnerFrom.setSelection(20)
-        inputFragmentView.spinnerTo.setSelection(1)
+        inputFragmentView.pickerFrom.minValue = 0
+        inputFragmentView.pickerFrom.maxValue = 31
+        inputFragmentView.pickerTo.minValue = 0
+        inputFragmentView.pickerTo.maxValue = 31
+        inputFragmentView.pickerFrom.displayedValues = viewModel.arrayOfCurrency
+        inputFragmentView.pickerTo.displayedValues = viewModel.arrayOfCurrency
+        inputFragmentView.pickerFrom.value = 20
+        inputFragmentView.pickerTo.value = 1
         return inputFragmentView
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -85,6 +88,16 @@ class ConverterFragment : Fragment() {
                 tvAmountLeft.text = resultValue
             }
         }
+        //walletOkFrom.setOnClickListener(object : View.OnClickListener {
+        //    override fun onClick(v: View?) {
+        //        tvFromCurrency.text = pickerFrom.value.toString()
+        //    }
+        //})
+        pickerFrom.setOnValueChangedListener(object : NumberPicker.OnValueChangeListener {
+            override fun onValueChange(picker: NumberPicker?, oldVal: Int, newVal: Int) {
+                tvFromCurrency.text = "COŚ"
+            }
+        })
     }
 
 

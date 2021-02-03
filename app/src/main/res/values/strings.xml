@@ -4,6 +4,7 @@
     <string name="conv">Converter</string>
     <string name="done">Completed</string>
     <string name="command">Touch to select a currency</string>
+    <string name="command1">Select a currency and press wallet to accept</string>
     <string-array name="currency_codes">
         <item>CAD</item>
         <item>EUR</item>
