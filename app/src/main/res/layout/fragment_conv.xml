@@ -40,7 +40,7 @@
                     tools:text="255"
                     android:text="0"
                     android:textColor="@android:color/black"
-                    android:textSize="29sp"
+                    android:textSize="28sp"
                     android:textStyle="bold"
                     android:clickable="true"/>
 
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="PLN"
-                    android:textSize="11sp" />
+                    android:textSize="10sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <ImageView
@@ -84,7 +84,7 @@
                     tools:text="42"
                     android:text="0"
                     android:textColor="@android:color/black"
-                    android:textSize="29sp"
+                    android:textSize="28sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="EUR"
-                    android:textSize="11sp" />
+                    android:textSize="10sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

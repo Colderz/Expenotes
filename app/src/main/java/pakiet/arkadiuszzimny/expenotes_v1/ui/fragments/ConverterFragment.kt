@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.NumberPicker
+import android.widget.NumberPicker.OnScrollListener.SCROLL_STATE_IDLE
 import androidx.activity.viewModels
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
@@ -75,6 +76,22 @@ class ConverterFragment : Fragment() {
         inputFragmentView.pickerTo.displayedValues = viewModel.arrayOfCurrency
         inputFragmentView.pickerFrom.value = 20
         inputFragmentView.pickerTo.value = 1
+
+
+        inputFragmentView.pickerFrom.setOnScrollListener({picker, state ->
+            if(state == SCROLL_STATE_IDLE) {
+                picker.postDelayed({
+                    tvFromCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
+                }, 200)
+            }
+        })
+        inputFragmentView.pickerTo.setOnScrollListener({picker, state ->
+            if(state == SCROLL_STATE_IDLE) {
+                picker.postDelayed({
+                    tvToCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
+                }, 200)
+            }
+        })
         return inputFragmentView
     }
 
@@ -88,19 +105,8 @@ class ConverterFragment : Fragment() {
                 tvAmountLeft.text = resultValue
             }
         }
-        //walletOkFrom.setOnClickListener(object : View.OnClickListener {
-        //    override fun onClick(v: View?) {
-        //        tvFromCurrency.text = pickerFrom.value.toString()
-        //    }
-        //})
-        pickerFrom.setOnValueChangedListener(object : NumberPicker.OnValueChangeListener {
-            override fun onValueChange(picker: NumberPicker?, oldVal: Int, newVal: Int) {
-                tvFromCurrency.text = "COŚ"
-            }
-        })
+
     }
-
-
 
 
 }
