@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     tools:text="42"
-                    android:text="0"
+                    android:text="0.00"
                     android:textColor="@android:color/black"
                     android:textSize="28sp"
                     android:textStyle="bold" />

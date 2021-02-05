@@ -4,13 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.NumberPicker
 import android.widget.NumberPicker.OnScrollListener.SCROLL_STATE_IDLE
-import androidx.activity.viewModels
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -19,14 +15,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_conv.*
 import kotlinx.android.synthetic.main.fragment_conv.view.*
 import kotlinx.coroutines.flow.collect
-import pakiet.arkadiuszzimny.expenotes_v1.MainActivity
 import pakiet.arkadiuszzimny.expenotes_v1.R
 import pakiet.arkadiuszzimny.expenotes_v1.main.MainViewModel
 
 @AndroidEntryPoint
 class ConverterFragment : Fragment() {
 
-    val ENTERAMOUNT_FRAGMENT = 1
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
@@ -52,47 +46,47 @@ class ConverterFragment : Fragment() {
                 }
             }
         }
-        val inputFragmentView = inflater.inflate(R.layout.fragment_conv, container, false)
-        inputFragmentView.tvAmountLeft.setOnClickListener(object : View.OnClickListener {
+        val converterFragmentView = inflater.inflate(R.layout.fragment_conv, container, false)
+        converterFragmentView.tvAmountLeft.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 var dialogInstance = AmountDialogFragment.newInstance("Amount", "Editing")
-                dialogInstance.setTargetFragment(this@ConverterFragment, ENTERAMOUNT_FRAGMENT)
+                dialogInstance.setTargetFragment(this@ConverterFragment, viewModel.ENTERAMOUNT_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
                 dialogInstance.show(parentFragmentManager.beginTransaction(), AmountDialogFragment.TAG)
             }
         })
-        inputFragmentView.btnConvert.setOnClickListener {
+        converterFragmentView.btnConvert.setOnClickListener {
             viewModel.convert(
                 tvAmountLeft.text.toString(),
                 tvFromCurrency.text.toString(),
                 tvToCurrency.text.toString()
             )
         }
-        inputFragmentView.pickerFrom.minValue = 0
-        inputFragmentView.pickerFrom.maxValue = 31
-        inputFragmentView.pickerTo.minValue = 0
-        inputFragmentView.pickerTo.maxValue = 31
-        inputFragmentView.pickerFrom.displayedValues = viewModel.arrayOfCurrency
-        inputFragmentView.pickerTo.displayedValues = viewModel.arrayOfCurrency
-        inputFragmentView.pickerFrom.value = 20
-        inputFragmentView.pickerTo.value = 1
+        converterFragmentView.pickerFrom.minValue = 0
+        converterFragmentView.pickerFrom.maxValue = 31
+        converterFragmentView.pickerTo.minValue = 0
+        converterFragmentView.pickerTo.maxValue = 31
+        converterFragmentView.pickerFrom.displayedValues = viewModel.arrayOfCurrency
+        converterFragmentView.pickerTo.displayedValues = viewModel.arrayOfCurrency
+        converterFragmentView.pickerFrom.value = 20
+        converterFragmentView.pickerTo.value = 1
 
 
-        inputFragmentView.pickerFrom.setOnScrollListener({picker, state ->
+        converterFragmentView.pickerFrom.setOnScrollListener({ picker, state ->
             if(state == SCROLL_STATE_IDLE) {
                 picker.postDelayed({
                     tvFromCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
                 }, 200)
             }
         })
-        inputFragmentView.pickerTo.setOnScrollListener({picker, state ->
+        converterFragmentView.pickerTo.setOnScrollListener({ picker, state ->
             if(state == SCROLL_STATE_IDLE) {
                 picker.postDelayed({
                     tvToCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
                 }, 200)
             }
         })
-        inputFragmentView.imageReplace.setOnClickListener(object : View.OnClickListener {
+        converterFragmentView.imageReplace.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val temporaryValue: String = tvFromCurrency.text.toString()
                 tvFromCurrency.text = tvToCurrency.text.toString()
@@ -107,14 +101,14 @@ class ConverterFragment : Fragment() {
                 )
             }
         })
-        return inputFragmentView
+        return converterFragmentView
     }
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when(requestCode) {
-            ENTERAMOUNT_FRAGMENT -> if(resultCode == Activity.RESULT_OK) {
+            viewModel.ENTERAMOUNT_FRAGMENT -> if(resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
                 var resultValue = bundle!!.getString("value","error")
                 tvAmountLeft.text = resultValue
