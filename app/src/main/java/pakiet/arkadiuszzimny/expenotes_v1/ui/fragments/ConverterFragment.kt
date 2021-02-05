@@ -92,6 +92,21 @@ class ConverterFragment : Fragment() {
                 }, 200)
             }
         })
+        inputFragmentView.imageReplace.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val temporaryValue: String = tvFromCurrency.text.toString()
+                tvFromCurrency.text = tvToCurrency.text.toString()
+                tvToCurrency.text = temporaryValue
+                val temporaryPickerValue = pickerFrom.value
+                pickerFrom.value = pickerTo.value
+                pickerTo.value = temporaryPickerValue
+                viewModel.convert(
+                    tvAmountLeft.text.toString(),
+                    tvFromCurrency.text.toString(),
+                    tvToCurrency.text.toString()
+                )
+            }
+        })
         return inputFragmentView
     }
 
