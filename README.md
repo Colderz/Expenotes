@@ -3,4 +3,4 @@ Project of an application that is an expense and savings manager with an integra
 
 [MVVM, Retrofit, Room database, Navigation Component, Push notifications, Dagger-Hilt, Coroutines, Material Design]
 
-![N|Solid](https://i.imgur.com/Zjk9f3w.jpg)
+![N|Solid](https://i.imgur.com/aNuFzTv.jpg)
