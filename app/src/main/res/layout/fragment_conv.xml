@@ -58,6 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textColor="@android:color/holo_orange_light"
                     android:text="PLN"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -102,6 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:textColor="@android:color/holo_orange_light"
                     android:text="EUR"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -116,6 +118,7 @@
         android:gravity="center"
         android:layout_marginHorizontal="40dp"
         android:textColor="@android:color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:text="@string/command1"/>
 
     <androidx.cardview.widget.CardView
@@ -252,7 +255,6 @@
         android:id="@+id/btnConvert"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@drawable/rounded_dialog"
         android:textColor="@android:color/white"
         android:textSize="12sp"
         android:layout_marginHorizontal="100dp"
