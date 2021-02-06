@@ -76,6 +76,7 @@ class ConverterFragment : Fragment() {
             if(state == SCROLL_STATE_IDLE) {
                 picker.postDelayed({
                     tvFromCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
+                    goalCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
                 }, 200)
             }
         })
@@ -83,6 +84,7 @@ class ConverterFragment : Fragment() {
             if(state == SCROLL_STATE_IDLE) {
                 picker.postDelayed({
                     tvToCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
+                    goalCurrency2.text = viewModel.arrayOfCurrency.get(picker.value)
                 }, 200)
             }
         })
