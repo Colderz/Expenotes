@@ -37,6 +37,7 @@ class MainViewModel @ViewModelInject constructor(
     }
 
     val ENTERAMOUNT_FRAGMENT = 1
+    val ENTERGOAL_FRAGMENT = 1
     private val _conversion = MutableStateFlow<CurrencyEvent>(CurrencyEvent.Empty)
     val conversion: StateFlow<CurrencyEvent> = _conversion
     val arrayOfCurrency = arrayOf("CAD", "EUR", "HKD", "ISK", "PHP", "DKK", "HUF", "CZK", "AUD", "RON", "SEK", "IDR",

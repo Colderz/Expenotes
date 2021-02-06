@@ -20,7 +20,7 @@ class AmountDialogFragment: DialogFragment() {
 
     companion object {
         const val TAG = "AmountDialog"
-        private const val KEY_TITLE ="KET_TITLE"
+        private const val KEY_TITLE ="KEY_TITLE"
         private const val KEY_SUBTITLE = "KEY_SUBTITLE"
         private lateinit var fragment: AmountDialogFragment
 

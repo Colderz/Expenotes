@@ -55,7 +55,8 @@
                     android:id="@+id/createGoalImage"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:clickable="true"/>
 
             </FrameLayout>
 
@@ -186,7 +187,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="115dp"
+                    android:layout_height="105dp"
                     app:cardCornerRadius="11dp"
                     android:layout_marginHorizontal="14dp"
                     android:layout_marginTop="11dp">
@@ -260,7 +261,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="2234"
+                                    android:text="0"
                                     android:textSize="13sp"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                     android:layout_marginStart="20dp"
@@ -278,6 +279,7 @@
                                     android:layout_marginStart="2dp"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                     android:layout_marginEnd="18dp"/>
+
 
                             </LinearLayout>
 
