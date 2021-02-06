@@ -172,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Main goal"
+                    android:text="Your goals"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp" />
@@ -186,16 +186,106 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="135dp"
+                    android:layout_height="115dp"
                     app:cardCornerRadius="11dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="15dp">
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginTop="11dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                        />
+                        <LinearLayout
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimary"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="end">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@android:color/black"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:text="Main goal"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:layout_marginStart="18dp"
+                                    android:layout_marginTop="10dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/command_main"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:textSize="9dp"
+                                    android:layout_marginStart="18dp"/>
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:progressTint="@color/colorSecond"
+                                android:progress="50"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="18dp"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="end">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2234"
+                                    android:textSize="13sp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginVertical="2dp"
+                                    android:layout_marginEnd="1dp"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="/5000 PLN"
+                                    android:textColor="@android:color/black"
+                                    android:layout_marginVertical="2dp"
+                                    android:textSize="16sp"
+                                    android:layout_marginStart="2dp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:layout_marginEnd="18dp"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
 
 
                 </androidx.cardview.widget.CardView>
