@@ -35,6 +35,7 @@ class ConverterFragment : Fragment() {
                 when(event) {
                     is MainViewModel.CurrencyEvent.Success -> {
                         tvAmountRight.text = event.resultText
+                        tvGoalSecond.text = event.resultGoalText
                     }
                     is MainViewModel.CurrencyEvent.Failure -> {
                         tvAmountRight.text = event.errorText
@@ -59,8 +60,10 @@ class ConverterFragment : Fragment() {
             viewModel.convert(
                 tvAmountLeft.text.toString(),
                 tvFromCurrency.text.toString(),
-                tvToCurrency.text.toString()
+                tvToCurrency.text.toString(),
+                tvGoalFirst.text.toString()
             )
+
         }
         converterFragmentView.pickerFrom.minValue = 0
         converterFragmentView.pickerFrom.maxValue = 31
@@ -99,7 +102,8 @@ class ConverterFragment : Fragment() {
                 viewModel.convert(
                     tvAmountLeft.text.toString(),
                     tvFromCurrency.text.toString(),
-                    tvToCurrency.text.toString()
+                    tvToCurrency.text.toString(),
+                    tvGoalFirst.text.toString()
                 )
             }
         })

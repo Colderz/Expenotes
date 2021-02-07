@@ -34,7 +34,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Create a new goal"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                 android:textSize="12sp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="9dp"/>
@@ -174,7 +173,6 @@
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
                     android:text="Your goals"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp" />
 
@@ -189,7 +187,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="105dp"
                     app:cardCornerRadius="11dp"
-                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_marginTop="11dp">
 
                     <LinearLayout
@@ -218,7 +216,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="@android:color/black"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                     android:text="Main goal"
                                     android:textStyle="bold"
                                     android:textSize="12sp"
@@ -237,7 +234,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/command_main"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                     android:textSize="9dp"
                                     android:layout_marginStart="18dp"/>
 

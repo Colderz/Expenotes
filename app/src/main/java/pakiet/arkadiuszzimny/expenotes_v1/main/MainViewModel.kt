@@ -30,7 +30,7 @@ class MainViewModel @ViewModelInject constructor(
 ): ViewModel() {
 
     sealed class CurrencyEvent {
-        class Success(val resultText: String): CurrencyEvent()
+        class Success(val resultText: String, val resultGoalText: String): CurrencyEvent()
         class Failure(val errorText: String): CurrencyEvent()
         object Loading: CurrencyEvent()
         object Empty: CurrencyEvent()
@@ -78,10 +78,12 @@ class MainViewModel @ViewModelInject constructor(
     fun convert(
         amountStr: String,
         fromCurrency: String,
-        toCurrency: String
+        toCurrency: String,
+        amountGoal: String,
     ) {
         val fromAmount = amountStr.toFloatOrNull()
-        if(fromAmount == null) {
+        val fromAmountGoal = amountGoal.toFloatOrNull()
+        if(fromAmount == null || fromAmountGoal == null) {
             _conversion.value = CurrencyEvent.Failure("Nieprawidłowa wartość")
             return
         }
@@ -97,9 +99,11 @@ class MainViewModel @ViewModelInject constructor(
                         _conversion.value = CurrencyEvent.Failure("Błąd")
                     } else {
                         val convertedCurrency = fromAmount * rate
+                        val convertedGoal1 =  fromAmountGoal * rate
                         val decimal = BigDecimal(convertedCurrency).setScale(2, RoundingMode.HALF_EVEN)
+                        val decimal2 = BigDecimal(convertedGoal1).setScale(2, RoundingMode.HALF_EVEN)
                         _conversion.value = CurrencyEvent.Success(
-                            "$decimal"
+                            "$decimal", "$decimal2"
                         )
                     }
                 }
