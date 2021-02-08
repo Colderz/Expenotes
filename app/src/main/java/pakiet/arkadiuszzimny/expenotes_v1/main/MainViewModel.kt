@@ -47,7 +47,7 @@ class MainViewModel @ViewModelInject constructor(
     fun loadImageUsingGlide(
         fragment: Fragment,
         progressBar: ProgressBar,
-        imageView: ImageView
+        imageView: ImageView,
     )
     {
         progressBar.visibility = View.VISIBLE

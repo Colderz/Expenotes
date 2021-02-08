@@ -28,7 +28,7 @@
             android:id="@+id/subTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:text="Editing"
             android:textColor="@android:color/white"
             android:layout_marginTop="2dp"

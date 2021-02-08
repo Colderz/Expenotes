@@ -19,7 +19,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="100dp"
         app:cardCornerRadius="13dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
@@ -30,13 +30,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Create a new goal"
-                android:textSize="12sp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="9dp"/>
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create/edit your main goal"
+                    android:textSize="12sp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="9dp"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -64,12 +75,13 @@
 
     </androidx.cardview.widget.CardView>
 
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="13dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:clickable="true">
 
         <LinearLayout
@@ -141,112 +153,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Secondary goal 1"
-                    android:textSize="10sp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="10dp"
-                    android:layout_gravity="center_vertical"/>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="6dp"
-                    android:layout_marginVertical="7dp"
-                    android:layout_marginEnd="10dp"
-                    android:clickable="true">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+50"
-                            android:textSize="12sp"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                            android:textColor="@android:color/black"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginStart="30dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginVertical="3dp"/>
-
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:layout_gravity="center_vertical"
-                            app:srcCompat="@drawable/ic_add"
-                            android:layout_marginEnd="13dp"/>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Secondary goal 2"
-                    android:textSize="10sp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginVertical="10dp"
-                    android:layout_gravity="center_vertical"/>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="6dp"
-                    android:layout_marginVertical="7dp"
-                    android:layout_marginEnd="10dp"
-                    android:clickable="true">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+50"
-                            android:textSize="12sp"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                            android:textColor="@android:color/black"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginStart="30dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginVertical="3dp"/>
-
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:layout_gravity="center_vertical"
-                            app:srcCompat="@drawable/ic_add"
-                            android:layout_marginEnd="13dp"/>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
 
         </LinearLayout>
 
@@ -356,7 +262,7 @@
                                 android:layout_height="wrap_content"
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:progressTint="@color/colorSecond"
-                                android:progress="50"
+                                android:progress="5"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginHorizontal="18dp"/>
 
@@ -416,7 +322,7 @@
                             app:layout_constraintStart_toEndOf="@+id/cardView"
                             app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginEnd="10dp"
-                            app:cardCornerRadius="6dp"
+                            app:cardCornerRadius="8dp"
                             android:layout_marginTop="5dp">
 
                             <LinearLayout
@@ -462,7 +368,7 @@
                                             android:layout_height="wrap_content"
                                             style="?android:attr/progressBarStyleHorizontal"
                                             android:progressTint="@color/colorSecond"
-                                            android:progress="50"
+                                            android:progress="5"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginHorizontal="13dp"/>
 
@@ -528,7 +434,7 @@
                             app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
-                            app:cardCornerRadius="6dp"
+                            app:cardCornerRadius="8dp"
                             android:layout_marginTop="5dp">
 
                             <LinearLayout
@@ -574,7 +480,7 @@
                                             android:layout_height="wrap_content"
                                             style="?android:attr/progressBarStyleHorizontal"
                                             android:progressTint="@color/colorSecond"
-                                            android:progress="50"
+                                            android:progress="5"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginHorizontal="13dp"/>
 

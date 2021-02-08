@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import kotlinx.android.synthetic.main.goal_layout.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
 
 class NewGoalDialogFragment: DialogFragment() {
@@ -24,6 +25,7 @@ class NewGoalDialogFragment: DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.goal_layout, container, false)
+        val newGoalDialogView = inflater.inflate(R.layout.goal_layout, container, false)
+        return newGoalDialogView
     }
 }
