@@ -6,7 +6,7 @@
     <string name="command">Touch to select a currency</string>
     <string name="command1">Select a currency and press the left value to change it</string>
     <string name="deposit1">Standard deposit</string>
-    <string name="command_main">Tap to change the goal amount and title.</string>
+    <string name="command_main">Tap to finish, archive or delete</string>
     <string name="info">Currency rates are regularly updated in line with the data provided by the exchange rates API.</string>
 
 </resources>
