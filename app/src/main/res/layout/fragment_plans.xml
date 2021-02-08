@@ -19,7 +19,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="110dp"
         app:cardCornerRadius="13dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="13dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:clickable="true">
 
         <LinearLayout
@@ -125,17 +125,27 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="+50"
+                                android:text="+"
+                                android:textSize="14sp"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                android:textColor="@android:color/black"
+                                android:layout_marginVertical="7dp"
+                                android:layout_marginStart="50dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="50"
                                 android:textSize="14sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                 android:textColor="@android:color/black"
                                 android:layout_marginVertical="7dp"
                                 android:layout_marginEnd="30dp"
-                                android:layout_marginStart="55dp"/>
+                                android:layout_marginStart="3dp"/>
+
+
 
                             <ImageView
                                 android:id="@+id/walletOkFrom"
@@ -159,6 +169,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
+        android:id="@+id/editdep_btn"
         android:layout_width="90dp"
         android:layout_height="35dp"
         android:text="EDIT"
@@ -175,7 +186,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="260dp"
             app:cardCornerRadius="13dp"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="15dp"
@@ -202,11 +213,13 @@
                     android:layout_marginHorizontal="18dp"/>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/mainGoalCard"
                     android:layout_width="match_parent"
                     android:layout_height="105dp"
                     app:cardCornerRadius="11dp"
                     android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="11dp">
+                    android:layout_marginTop="11dp"
+                    android:clickable="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -306,7 +319,7 @@
 
                 <LinearLayout
                     android:layout_width= "match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="100dp"
                     android:orientation="horizontal">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -316,7 +329,7 @@
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cardView2"
                             android:layout_width="0dp"
-                            android:layout_height="105dp"
+                            android:layout_height="75dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/cardView"
@@ -350,7 +363,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:textColor="@android:color/black"
-                                            android:text="Secondary goal 2"
+                                            android:text="Future goal 2"
                                             android:textStyle="bold"
                                             android:textSize="10sp"
                                             android:layout_marginStart="13dp"
@@ -359,18 +372,10 @@
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="@string/command_main"
+                                            android:text="Touch to set a future goal"
                                             android:textSize="8dp"
                                             android:layout_marginStart="13dp"/>
 
-                                        <ProgressBar
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            style="?android:attr/progressBarStyleHorizontal"
-                                            android:progressTint="@color/colorSecond"
-                                            android:progress="5"
-                                            android:layout_marginTop="10dp"
-                                            android:layout_marginHorizontal="13dp"/>
 
                                         <LinearLayout
                                             android:layout_width="match_parent"
@@ -427,7 +432,7 @@
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cardView"
                             android:layout_width="0dp"
-                            android:layout_height="105dp"
+                            android:layout_height="75dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/cardView2"
                             app:layout_constraintStart_toStartOf="parent"
@@ -462,7 +467,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:textColor="@android:color/black"
-                                            android:text="Secondary goal 1"
+                                            android:text="Future goal 1"
                                             android:textStyle="bold"
                                             android:textSize="10sp"
                                             android:layout_marginStart="13dp"
@@ -471,18 +476,9 @@
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="@string/command_main"
+                                            android:text="Touch to set a future goal"
                                             android:textSize="8dp"
                                             android:layout_marginStart="13dp"/>
-
-                                        <ProgressBar
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            style="?android:attr/progressBarStyleHorizontal"
-                                            android:progressTint="@color/colorSecond"
-                                            android:progress="5"
-                                            android:layout_marginTop="10dp"
-                                            android:layout_marginHorizontal="13dp"/>
 
                                         <LinearLayout
                                         android:layout_width="match_parent"

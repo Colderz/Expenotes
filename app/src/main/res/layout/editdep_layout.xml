@@ -17,31 +17,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New goal"
+            android:text="How much should the standard deposit be?"
             android:id="@+id/dialogName"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
             android:layout_marginTop="65dp"/>
 
-        <TextView
-            android:id="@+id/subTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="13sp"
-            android:gravity="center"
-            android:layout_marginHorizontal="20dp"
-            android:text="The target you create will replace the current one"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="10dp" />
+
 
         <androidx.cardview.widget.CardView
-            android:layout_width="230dp"
+            android:layout_width="190dp"
             android:layout_height="105dp"
             android:background="#f2f2f2"
             app:cardCornerRadius="14dp"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,7 +48,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Goal">
+                    android:hint="Amount">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etFrom"
@@ -90,6 +83,7 @@
 
 
 
+
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -111,19 +105,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Main"
-                android:textSize="29sp"
+                android:textSize="12sp"
                 android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                android:text="Enter the amount of the current goal"
+                android:text="Edit standard donation to goal"
                 android:gravity="center_horizontal"
-                android:paddingHorizontal="7dp"/>
+                android:paddingHorizontal="4dp"/>
 
 
         </LinearLayout>
