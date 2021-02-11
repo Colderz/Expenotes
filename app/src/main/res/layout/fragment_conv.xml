@@ -322,7 +322,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/command_main"
+                                android:text="Your goal expressed in the currency from the FROM field"
                                 android:textSize="9dp"
                                 android:layout_marginStart="18dp"/>
 
@@ -448,7 +448,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/command_main"
+                                android:text="Your goal expressed in the currency from the TO field"
                                 android:textSize="9dp"
                                 android:layout_marginStart="18dp"/>
 
