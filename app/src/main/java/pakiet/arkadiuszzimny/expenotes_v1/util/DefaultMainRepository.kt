@@ -1,9 +1,7 @@
-package pakiet.arkadiuszzimny.expenotes_v1.main
+package pakiet.arkadiuszzimny.expenotes_v1.util
 
-import android.util.Log
 import pakiet.arkadiuszzimny.expenotes_v1.data.CurrencyApi
 import pakiet.arkadiuszzimny.expenotes_v1.data.models.CurrencyResponse
-import pakiet.arkadiuszzimny.expenotes_v1.util.Resource
 import java.lang.Exception
 import javax.inject.Inject
 

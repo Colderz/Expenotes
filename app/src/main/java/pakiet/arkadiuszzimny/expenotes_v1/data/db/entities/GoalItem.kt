@@ -4,13 +4,15 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "goals")
+@Entity(tableName = "goal_table")
 data class GoalItem(
-    @PrimaryKey(autoGenerate = true) var id: Int? = null,
-    @ColumnInfo(name="type")
-    var type: String,
-    @ColumnInfo(name="goal")
-    var goal: Int,
-    @ColumnInfo(name="state")
-    var state: Int
-)
+   @ColumnInfo(name="type")
+   var type: String,
+   @ColumnInfo(name="goal")
+   var goal: Int,
+   @ColumnInfo(name="state")
+   var state: Int
+) {
+   @PrimaryKey(autoGenerate = true)
+   var goal_id: Int = 0
+}

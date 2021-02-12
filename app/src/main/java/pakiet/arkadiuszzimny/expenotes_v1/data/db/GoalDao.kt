@@ -14,7 +14,7 @@ interface GoalDao {
     @Delete
     suspend fun deleteGoal(item: GoalItem)
 
-    @Query("SELECT * FROM goals")
+    @Query("SELECT * FROM goal_table")
     fun getAllGaols() : LiveData<List<GoalItem>>
 
 }

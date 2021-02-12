@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import pakiet.arkadiuszzimny.expenotes_v1.data.models.Rates
-import pakiet.arkadiuszzimny.expenotes_v1.main.MainRepository
+import pakiet.arkadiuszzimny.expenotes_v1.util.MainRepository
 import pakiet.arkadiuszzimny.expenotes_v1.util.DispatcherProvider
 import pakiet.arkadiuszzimny.expenotes_v1.util.Resource
 import java.math.BigDecimal

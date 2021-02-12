@@ -7,8 +7,8 @@ import dagger.hilt.android.components.ApplicationComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import pakiet.arkadiuszzimny.expenotes_v1.data.CurrencyApi
-import pakiet.arkadiuszzimny.expenotes_v1.main.DefaultMainRepository
-import pakiet.arkadiuszzimny.expenotes_v1.main.MainRepository
+import pakiet.arkadiuszzimny.expenotes_v1.util.DefaultMainRepository
+import pakiet.arkadiuszzimny.expenotes_v1.util.MainRepository
 import pakiet.arkadiuszzimny.expenotes_v1.util.DispatcherProvider
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
