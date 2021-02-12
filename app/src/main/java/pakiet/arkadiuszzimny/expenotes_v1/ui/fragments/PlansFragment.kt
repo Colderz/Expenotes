@@ -11,11 +11,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_plans.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
 import pakiet.arkadiuszzimny.expenotes_v1.main.MainViewModel
+import pakiet.arkadiuszzimny.expenotes_v1.ui.PlansViewModel
 
 @AndroidEntryPoint
 class PlansFragment : Fragment() {
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: PlansViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

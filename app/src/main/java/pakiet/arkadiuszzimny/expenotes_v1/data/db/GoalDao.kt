@@ -1,9 +1,7 @@
 package pakiet.arkadiuszzimny.expenotes_v1.data.db
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import pakiet.arkadiuszzimny.expenotes_v1.data.db.entities.GoalItem
 
 @Dao
@@ -15,5 +13,8 @@ interface GoalDao {
 
     @Delete
     suspend fun deleteGoal(item: GoalItem)
+
+    @Query("SELECT * FROM goals")
+    fun getAllGaols() : LiveData<List<GoalItem>>
 
 }
