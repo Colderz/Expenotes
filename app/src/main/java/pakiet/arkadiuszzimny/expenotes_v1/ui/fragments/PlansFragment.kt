@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_plans.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
-import pakiet.arkadiuszzimny.expenotes_v1.main.MainViewModel
 import pakiet.arkadiuszzimny.expenotes_v1.ui.PlansViewModel
 
 @AndroidEntryPoint

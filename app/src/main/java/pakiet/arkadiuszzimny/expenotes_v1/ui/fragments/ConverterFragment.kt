@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_conv.*
 import kotlinx.android.synthetic.main.fragment_conv.view.*
 import kotlinx.coroutines.flow.collect
 import pakiet.arkadiuszzimny.expenotes_v1.R
-import pakiet.arkadiuszzimny.expenotes_v1.main.MainViewModel
+import pakiet.arkadiuszzimny.expenotes_v1.ui.MainViewModel
 
 @AndroidEntryPoint
 class ConverterFragment : Fragment() {

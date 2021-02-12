@@ -1,28 +1,17 @@
-package pakiet.arkadiuszzimny.expenotes_v1.main
+package pakiet.arkadiuszzimny.expenotes_v1.ui
 
-import android.graphics.drawable.Drawable
-import android.view.View
-import android.widget.ImageView
-import android.widget.ProgressBar
-import androidx.fragment.app.Fragment
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.target.Target
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import pakiet.arkadiuszzimny.expenotes_v1.data.models.Rates
+import pakiet.arkadiuszzimny.expenotes_v1.main.MainRepository
 import pakiet.arkadiuszzimny.expenotes_v1.util.DispatcherProvider
 import pakiet.arkadiuszzimny.expenotes_v1.util.Resource
-import java.lang.Math.round
 import java.math.BigDecimal
 import java.math.RoundingMode
-import kotlin.math.round
 
 class MainViewModel @ViewModelInject constructor(
     private val repository: MainRepository,
@@ -59,7 +48,8 @@ class MainViewModel @ViewModelInject constructor(
         viewModelScope.launch(dispatchers.io) {
             _conversion.value = CurrencyEvent.Loading
             when(val ratesResponse = repository.getRates(fromCurrency)) {
-                is Resource.Error -> _conversion.value = CurrencyEvent.Failure(ratesResponse.message!!)
+                is Resource.Error -> _conversion.value =
+                    CurrencyEvent.Failure(ratesResponse.message!!)
                 is Resource.Success -> {
                     val rates = ratesResponse.data!!.rates
                     val rate = getRateForCurrency(toCurrency, rates)
