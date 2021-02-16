@@ -299,7 +299,27 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="/5000 PLN"
+                                    android:text="/"
+                                    android:textColor="@android:color/black"
+                                    android:layout_marginVertical="2dp"
+                                    android:textSize="16sp"
+                                    android:layout_marginStart="2dp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+                                <TextView
+                                    android:id="@+id/amountGoal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="5000"
+                                    android:textColor="@android:color/black"
+                                    android:layout_marginVertical="2dp"
+                                    android:textSize="16sp"
+                                    android:layout_marginStart="2dp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="PLN"
                                     android:textColor="@android:color/black"
                                     android:layout_marginVertical="2dp"
                                     android:textSize="16sp"

@@ -58,7 +58,7 @@
                     android:hint="Goal">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etFrom"
+                        android:id="@+id/etGoal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="numberPassword"

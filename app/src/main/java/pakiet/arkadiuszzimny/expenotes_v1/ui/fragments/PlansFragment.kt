@@ -10,6 +10,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_plans.*
 import kotlinx.android.synthetic.main.fragment_plans.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
 import pakiet.arkadiuszzimny.expenotes_v1.ui.PlansViewModel
@@ -64,7 +65,8 @@ class PlansFragment : Fragment() {
         when(requestCode) {
             viewModel.ENTERGOAL_FRAGMENT -> if(resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
-                //var resultValue
+                var resultValue = bundle!!.getString("value", "error")
+                amountGoal.text = resultValue
             }
         }
     }
