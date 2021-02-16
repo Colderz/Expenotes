@@ -1,5 +1,7 @@
 package pakiet.arkadiuszzimny.expenotes_v1.ui.fragments
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,13 +33,14 @@ class PlansFragment : Fragment() {
                 dialogInstance.setTargetFragment(this@PlansFragment, viewModel.ENTERGOAL_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
                 dialogInstance.show(parentFragmentManager.beginTransaction(), NewGoalDialogFragment.TAG)
+
             }
         })
 
         goalsFragmentView.mainGoalCard.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val dialogInstance = InfoGoalDialogFragment.newInstance()
-                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.ENTERGOAL_FRAGMENT)
+                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
                 dialogInstance.show(parentFragmentManager.beginTransaction(), InfoGoalDialogFragment.TAG)
             }
@@ -46,13 +49,24 @@ class PlansFragment : Fragment() {
         goalsFragmentView.editdep_btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val dialogInstance = EditDepDialogFragment.newInstance()
-                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.ENTERGOAL_FRAGMENT)
+                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.MANAGEGOAL_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
                 dialogInstance.show(parentFragmentManager.beginTransaction(), EditDepDialogFragment.TAG)
             }
         })
 
+
         return goalsFragmentView
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when(requestCode) {
+            viewModel.ENTERGOAL_FRAGMENT -> if(resultCode == Activity.RESULT_OK) {
+                var bundle = data!!.extras
+                //var resultValue
+            }
+        }
     }
 
 }
