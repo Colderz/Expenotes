@@ -1,8 +1,10 @@
 package pakiet.arkadiuszzimny.expenotes_v1.ui
 
+import android.app.Activity
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.android.synthetic.main.fragment_plans.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -16,20 +18,52 @@ import java.math.RoundingMode
 class MainViewModel @ViewModelInject constructor(
     private val repository: MainRepository,
     private val dispatchers: DispatcherProvider
-): ViewModel() {
+) : ViewModel() {
 
     sealed class CurrencyEvent {
-        class Success(val resultText: String, val resultGoalText: String): CurrencyEvent()
-        class Failure(val errorText: String): CurrencyEvent()
-        object Loading: CurrencyEvent()
-        object Empty: CurrencyEvent()
+        class Success(val resultText: String, val resultGoalText: String) : CurrencyEvent()
+        class Failure(val errorText: String) : CurrencyEvent()
+        object Loading : CurrencyEvent()
+        object Empty : CurrencyEvent()
     }
 
     val ENTERAMOUNT_FRAGMENT = 1
     private val _conversion = MutableStateFlow<CurrencyEvent>(CurrencyEvent.Empty)
     val conversion: StateFlow<CurrencyEvent> = _conversion
-    val arrayOfCurrency = arrayOf("CAD", "EUR", "HKD", "ISK", "PHP", "DKK", "HUF", "CZK", "AUD", "RON", "SEK", "IDR",
-        "INR", "BRL", "RUB", "HRK", "JPY", "THB", "CHF", "SGD", "PLN", "BGN", "CNY", "NOK", "NZD", "ZAR", "USD", "MXN", "ILS", "GBP", "KRW", "MYR")
+    val arrayOfCurrency = arrayOf(
+        "CAD",
+        "EUR",
+        "HKD",
+        "ISK",
+        "PHP",
+        "DKK",
+        "HUF",
+        "CZK",
+        "AUD",
+        "RON",
+        "SEK",
+        "IDR",
+        "INR",
+        "BRL",
+        "RUB",
+        "HRK",
+        "JPY",
+        "THB",
+        "CHF",
+        "SGD",
+        "PLN",
+        "BGN",
+        "CNY",
+        "NOK",
+        "NZD",
+        "ZAR",
+        "USD",
+        "MXN",
+        "ILS",
+        "GBP",
+        "KRW",
+        "MYR"
+    )
 
 
     fun convert(
@@ -40,26 +74,28 @@ class MainViewModel @ViewModelInject constructor(
     ) {
         val fromAmount = amountStr.toFloatOrNull()
         val fromAmountGoal = amountGoal.toFloatOrNull()
-        if(fromAmount == null || fromAmountGoal == null) {
+        if (fromAmount == null || fromAmountGoal == null) {
             _conversion.value = CurrencyEvent.Failure("Nieprawidłowa wartość")
             return
         }
 
         viewModelScope.launch(dispatchers.io) {
             _conversion.value = CurrencyEvent.Loading
-            when(val ratesResponse = repository.getRates(fromCurrency)) {
+            when (val ratesResponse = repository.getRates(fromCurrency)) {
                 is Resource.Error -> _conversion.value =
                     CurrencyEvent.Failure(ratesResponse.message!!)
                 is Resource.Success -> {
                     val rates = ratesResponse.data!!.rates
                     val rate = getRateForCurrency(toCurrency, rates)
-                    if(rate == null) {
+                    if (rate == null) {
                         _conversion.value = CurrencyEvent.Failure("Błąd")
                     } else {
                         val convertedCurrency = fromAmount * rate
-                        val convertedGoal1 =  fromAmountGoal * rate
-                        val decimal = BigDecimal(convertedCurrency).setScale(2, RoundingMode.HALF_EVEN)
-                        val decimal2 = BigDecimal(convertedGoal1).setScale(2, RoundingMode.HALF_EVEN)
+                        val convertedGoal1 = fromAmountGoal * rate
+                        val decimal =
+                            BigDecimal(convertedCurrency).setScale(2, RoundingMode.HALF_EVEN)
+                        val decimal2 =
+                            BigDecimal(convertedGoal1).setScale(2, RoundingMode.HALF_EVEN)
                         _conversion.value = CurrencyEvent.Success(
                             "$decimal", "$decimal2"
                         )
@@ -104,5 +140,6 @@ class MainViewModel @ViewModelInject constructor(
         "MYR" -> rates.mYR
         else -> null
     }
+
 
 }

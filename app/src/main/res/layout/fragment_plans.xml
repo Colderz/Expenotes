@@ -275,7 +275,7 @@
                                 android:layout_height="wrap_content"
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:progressTint="@color/colorSecond"
-                                android:progress="5"
+                                android:progress="0"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginHorizontal="18dp"/>
 
@@ -309,7 +309,7 @@
                                     android:id="@+id/amountGoal"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="5000"
+                                    android:text="NOT SET"
                                     android:textColor="@android:color/black"
                                     android:layout_marginVertical="2dp"
                                     android:textSize="16sp"
@@ -320,6 +320,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="PLN"
+                                    android:visibility="invisible"
                                     android:textColor="@android:color/black"
                                     android:layout_marginVertical="2dp"
                                     android:textSize="16sp"
@@ -407,24 +408,9 @@
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:textSize="10sp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                                android:text="0"/>
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
                                                 android:textSize="13sp"
                                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                                android:text="/"
-                                                android:layout_marginStart="3dp"/>
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:textSize="13sp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                                android:text="1000"
+                                                android:text="NOT SET"
                                                 android:textColor="@android:color/black"
                                                 android:layout_marginStart="1dp" />
 
@@ -434,6 +420,7 @@
                                                 android:textSize="13sp"
                                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                                 android:text="PLN"
+                                                android:visibility="invisible"
                                                 android:textColor="@android:color/black"
                                                 android:layout_marginStart="2dp"
                                                 android:layout_marginEnd="10dp"/>
@@ -510,24 +497,9 @@
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:textSize="10sp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                                android:text="0"/>
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
                                                 android:textSize="13sp"
                                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                                android:text="/"
-                                                android:layout_marginStart="3dp"/>
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:textSize="13sp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                                android:text="1000"
+                                                android:text="NOT SET"
                                                 android:textColor="@android:color/black"
                                                 android:layout_marginStart="1dp" />
 
@@ -538,6 +510,7 @@
                                                 android:textSize="13sp"
                                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                                 android:text="PLN"
+                                                android:visibility="invisible"
                                                 android:textColor="@android:color/black"
                                                 android:layout_marginStart="2dp"
                                                 android:layout_marginEnd="10dp"/>
