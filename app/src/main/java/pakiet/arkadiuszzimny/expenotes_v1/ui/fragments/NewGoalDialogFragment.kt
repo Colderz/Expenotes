@@ -7,11 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
 import kotlinx.android.synthetic.main.goal_layout.*
 import kotlinx.android.synthetic.main.goal_layout.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
+import pakiet.arkadiuszzimny.expenotes_v1.data.db.entities.GoalItem
+import pakiet.arkadiuszzimny.expenotes_v1.ui.PlansViewModel
 
 class NewGoalDialogFragment : DialogFragment() {
+
+    //private val viewModel: PlansViewModel by viewModels()
 
     companion object {
         const val TAG = "NewGoalDialog"
@@ -41,6 +46,8 @@ class NewGoalDialogFragment : DialogFragment() {
         view.savebtn.setOnClickListener {
             var intent = Intent()
             intent.putExtra("value", etGoal.text.toString())
+            //val item = GoalItem("Main", Integer.valueOf(etGoal.text.toString()), 0)
+            //viewModel.upsert(item)
             targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
             dismiss()
         }
