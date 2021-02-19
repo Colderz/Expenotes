@@ -16,7 +16,6 @@ import pakiet.arkadiuszzimny.expenotes_v1.ui.PlansViewModel
 
 class NewGoalDialogFragment : DialogFragment() {
 
-    //private val viewModel: PlansViewModel by viewModels()
 
     companion object {
         const val TAG = "NewGoalDialog"
@@ -46,8 +45,6 @@ class NewGoalDialogFragment : DialogFragment() {
         view.savebtn.setOnClickListener {
             var intent = Intent()
             intent.putExtra("value", etGoal.text.toString())
-            //val item = GoalItem("Main", Integer.valueOf(etGoal.text.toString()), 0)
-            //viewModel.upsert(item)
             targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
             dismiss()
         }
