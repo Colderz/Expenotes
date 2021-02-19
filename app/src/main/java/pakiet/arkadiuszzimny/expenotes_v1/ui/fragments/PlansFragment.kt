@@ -2,6 +2,7 @@ package pakiet.arkadiuszzimny.expenotes_v1.ui.fragments
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LiveData
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_plans.*
 import kotlinx.android.synthetic.main.fragment_plans.view.*
@@ -20,6 +22,7 @@ import pakiet.arkadiuszzimny.expenotes_v1.ui.PlansViewModel
 class PlansFragment : Fragment() {
 
     private val viewModel: PlansViewModel by viewModels()
+    private lateinit var listOfGoals: LiveData<List<GoalItem>>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,6 +64,29 @@ class PlansFragment : Fragment() {
         return goalsFragmentView
     }
 
+    override fun onResume() {
+        super.onResume()
+        listOfGoals = viewModel.getAllGoals()
+        listOfGoals.observe(viewLifecycleOwner, {
+            if (it.isNotEmpty()) {
+                for (item in it) {
+                    if (item.type.equals("main")) {
+                        amountGoal.text = item.goal.toString()
+                        currency.visibility = View.VISIBLE
+                    }
+                    if(item.type.equals("fut1")) {
+                        amountGoal1.text = item.goal.toString()
+                        currency1.visibility = View.VISIBLE
+                    }
+                    if(item.type.equals("fut2")) {
+                        amountGoal2.text = item.goal.toString()
+                        currency2.visibility = View.VISIBLE
+                    }
+                }
+            }
+        })
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when(requestCode) {
@@ -72,19 +98,25 @@ class PlansFragment : Fragment() {
                 if(!resultValue.equals("error")) {
                     amountGoal.text = resultValue
                     currency.visibility = View.VISIBLE
+                    val item = GoalItem("main", Integer.valueOf(resultValue), 0)
+                    viewModel.upsert(item)
                 }
                 if(!resultValue1.equals("error")) {
                     amountGoal1.text = resultValue1
                     currency1.visibility = View.VISIBLE
+                    val item1 = GoalItem("fut1", Integer.valueOf(resultValue1), 0)
+                    viewModel.upsert(item1)
                 }
                 if(!resultValue2.equals("error")) {
                     amountGoal2.text = resultValue2
                     currency2.visibility = View.VISIBLE
+                    val item2 = GoalItem("fut2", Integer.valueOf(resultValue2), 0)
+                    viewModel.upsert(item2)
                 }
-                //val item = GoalItem("main", Integer.valueOf(resultValue), 0)
-                //viewModel.upsert(item)
+
             }
         }
     }
+
 
 }

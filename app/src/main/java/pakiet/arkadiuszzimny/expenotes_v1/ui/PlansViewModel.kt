@@ -8,6 +8,7 @@ import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -70,7 +71,6 @@ class PlansViewModel @ViewModelInject constructor(application: Application, priv
     fun getAllGoals() : LiveData<List<GoalItem>> = runBlocking {
         allGoal.await()
     }
-
 
 
 }
