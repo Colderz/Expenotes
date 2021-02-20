@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#f2f2f2"
-    android:gravity="end">
+    android:gravity="end"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginEnd="30dp"
         android:layout_marginTop="10dp"
-        android:text="Current goals"/>
+        android:layout_marginEnd="30dp"
+        android:text="Current goals"
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        app:cardCornerRadius="13dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:clickable="true">
+        android:clickable="true"
+        app:cardCornerRadius="13dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,34 +38,34 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Create/edit your main goal"
-                    android:textSize="12sp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="9dp"
-                    android:layout_gravity="center_vertical"/>
+                    android:text="Create/edit your main goal"
+                    android:textSize="12sp" />
 
             </LinearLayout>
-
 
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="left">
+                android:gravity="left"
+                android:orientation="vertical">
 
                 <ProgressBar
                     android:id="@+id/fragmentOneProgressBar"
-                    android:visibility="invisible"
-                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="invisible" />
+
                 <ImageView
                     android:id="@+id/createGoalImage"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:scaleType="centerCrop"
-                    android:clickable="true"/>
+                    android:clickable="true"
+                    android:scaleType="centerCrop" />
 
             </FrameLayout>
 
@@ -79,17 +78,17 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="13dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:clickable="true">
+        android:clickable="true"
+        app:cardCornerRadius="13dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:clickable="true"
             android:gravity="center_vertical"
-            android:clickable="true">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,53 +97,54 @@
                 android:orientation="horizontal">
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/deposit1"
-                        android:textStyle="bold"
-                        android:textSize="12sp"
-                        android:layout_marginStart="22dp"
-                        android:layout_marginVertical="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    android:layout_marginStart="22dp"
+                    android:text="@string/deposit1"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="end">
+                    android:gravity="end"
+                    android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="150dp"
                         android:layout_height="33dp"
-                        app:cardCornerRadius="9dp"
                         android:layout_marginVertical="7dp"
                         android:layout_marginEnd="10dp"
-                        android:clickable="true">
+                        android:clickable="true"
+                        app:cardCornerRadius="9dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="+"
-                                android:textSize="14sp"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                android:textColor="@android:color/black"
-                                android:layout_marginVertical="7dp"
-                                android:layout_marginStart="50dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="50"
-                                android:textSize="14sp"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                android:textColor="@android:color/black"
-                                android:layout_marginVertical="7dp"
-                                android:layout_marginEnd="30dp"
-                                android:layout_marginStart="3dp"/>
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="7dp"
+                                android:layout_marginStart="50dp"
+                                android:text="+"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="7dp"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginEnd="30dp"
+                                android:text="50"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
 
 
                             <ImageView
@@ -152,8 +152,9 @@
                                 android:layout_width="22dp"
                                 android:layout_height="22dp"
                                 android:layout_gravity="center_vertical"
-                                app:srcCompat="@drawable/ic_add"
-                                android:layout_marginEnd="13dp"/>
+                                android:layout_marginEnd="13dp"
+                                android:clickable="true"
+                                app:srcCompat="@drawable/ic_add" />
 
                         </LinearLayout>
 
@@ -172,11 +173,10 @@
         android:id="@+id/editdep_btn"
         android:layout_width="90dp"
         android:layout_height="35dp"
+        android:layout_marginEnd="20dp"
         android:text="EDIT"
         android:textColor="@android:color/white"
-        android:textSize="9sp"
-        android:layout_marginEnd="20dp" />
-
+        android:textSize="9sp" />
 
 
     <LinearLayout
@@ -187,10 +187,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="260dp"
-            app:cardCornerRadius="13dp"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="13dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -200,26 +200,26 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="11sp"
-                    android:text="Your goals"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="10dp"
+                    android:text="Your goals"
+                    android:textSize="11sp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#d2d2d2"
+                    android:layout_marginHorizontal="18dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginHorizontal="18dp"/>
+                    android:background="#d2d2d2" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/mainGoalCard"
                     android:layout_width="match_parent"
                     android:layout_height="105dp"
-                    app:cardCornerRadius="11dp"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginTop="11dp"
-                    android:clickable="true">
+                    android:clickable="true"
+                    app:cardCornerRadius="11dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -229,13 +229,13 @@
                         <LinearLayout
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:background="@color/colorPrimary"/>
+                            android:background="@color/colorPrimary" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:gravity="end">
+                            android:gravity="end"
+                            android:orientation="vertical">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -246,12 +246,12 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:textColor="@android:color/black"
-                                    android:text="Main goal"
-                                    android:textStyle="bold"
-                                    android:textSize="12sp"
                                     android:layout_marginStart="18dp"
-                                    android:layout_marginTop="10dp"/>
+                                    android:layout_marginTop="10dp"
+                                    android:text="Main goal"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
 
                             </LinearLayout>
 
@@ -264,70 +264,71 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginStart="18dp"
                                     android:text="@string/command_main"
-                                    android:textSize="9dp"
-                                    android:layout_marginStart="18dp"/>
+                                    android:textSize="9dp" />
 
                             </LinearLayout>
 
                             <ProgressBar
+                                style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:progressTint="@color/colorSecond"
-                                android:progress="0"
+                                android:layout_marginHorizontal="18dp"
                                 android:layout_marginTop="10dp"
-                                android:layout_marginHorizontal="18dp"/>
+                                android:progress="0"
+                                android:progressTint="@color/colorSecond" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:gravity="end">
+                                android:gravity="end"
+                                android:orientation="horizontal">
 
                                 <TextView
+                                    android:id="@+id/stateGoal"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="0"
-                                    android:textSize="13sp"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:layout_marginVertical="2dp"
                                     android:layout_marginStart="20dp"
-                                    android:layout_marginVertical="2dp"
                                     android:layout_marginEnd="1dp"
-                                    />
+                                    android:text="0"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:textSize="13sp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="/"
-                                    android:textColor="@android:color/black"
                                     android:layout_marginVertical="2dp"
-                                    android:textSize="16sp"
                                     android:layout_marginStart="2dp"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+                                    android:text="/"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp" />
+
                                 <TextView
                                     android:id="@+id/amountGoal"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="NOT SET"
-                                    android:textColor="@android:color/black"
                                     android:layout_marginVertical="2dp"
-                                    android:textSize="16sp"
                                     android:layout_marginStart="2dp"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4" />
+                                    android:text="NOT SET"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp" />
 
                                 <TextView
                                     android:id="@+id/currency"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="PLN"
-                                    android:visibility="invisible"
-                                    android:textColor="@android:color/black"
                                     android:layout_marginVertical="2dp"
-                                    android:textSize="16sp"
                                     android:layout_marginStart="2dp"
+                                    android:layout_marginEnd="18dp"
+                                    android:text="PLN"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                    android:layout_marginEnd="18dp"/>
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp"
+                                    android:visibility="invisible" />
 
 
                             </LinearLayout>
@@ -340,7 +341,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
-                    android:layout_width= "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:orientation="horizontal">
 
@@ -352,13 +353,13 @@
                             android:id="@+id/cardView2"
                             android:layout_width="0dp"
                             android:layout_height="75dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="8dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/cardView"
-                            app:layout_constraintTop_toTopOf="parent"
-                            android:layout_marginEnd="10dp"
-                            app:cardCornerRadius="8dp"
-                            android:layout_marginTop="5dp">
+                            app:layout_constraintTop_toTopOf="parent">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -368,7 +369,7 @@
                                 <LinearLayout
                                     android:layout_width="15dp"
                                     android:layout_height="match_parent"
-                                    android:background="#8e8e8e"/>
+                                    android:background="#8e8e8e" />
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -384,49 +385,49 @@
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:textColor="@android:color/black"
-                                            android:text="Future goal 2"
-                                            android:textStyle="bold"
-                                            android:textSize="10sp"
                                             android:layout_marginStart="13dp"
-                                            android:layout_marginTop="10dp"/>
+                                            android:layout_marginTop="10dp"
+                                            android:text="Future goal 2"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Touch to set a future goal"
-                                            android:textSize="8dp"
-                                            android:layout_marginStart="13dp"/>
+                                            android:layout_marginStart="13dp"
+                                            android:text="@string/fut_command"
+                                            android:textSize="8dp" />
 
 
                                         <LinearLayout
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:orientation="horizontal"
+                                            android:layout_marginTop="10dp"
                                             android:gravity="end"
-                                            android:layout_marginTop="10dp">
+                                            android:orientation="horizontal">
 
                                             <TextView
                                                 android:id="@+id/amountGoal2"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:textSize="13sp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                                android:layout_marginStart="1dp"
                                                 android:text="NOT SET"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                                 android:textColor="@android:color/black"
-                                                android:layout_marginStart="1dp" />
+                                                android:textSize="13sp" />
 
                                             <TextView
                                                 android:id="@+id/currency2"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:textSize="13sp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                                android:text="PLN"
-                                                android:visibility="invisible"
-                                                android:textColor="@android:color/black"
                                                 android:layout_marginStart="2dp"
-                                                android:layout_marginEnd="10dp"/>
+                                                android:layout_marginEnd="10dp"
+                                                android:text="PLN"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                                android:textColor="@android:color/black"
+                                                android:textSize="13sp"
+                                                android:visibility="invisible" />
 
                                         </LinearLayout>
 
@@ -443,14 +444,14 @@
                             android:id="@+id/cardView"
                             android:layout_width="0dp"
                             android:layout_height="75dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="8dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/cardView2"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            app:cardCornerRadius="8dp"
-                            android:layout_marginTop="5dp">
+                            app:layout_constraintTop_toTopOf="parent">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -460,7 +461,7 @@
                                 <LinearLayout
                                     android:layout_width="15dp"
                                     android:layout_height="match_parent"
-                                    android:background="#373737"/>
+                                    android:background="#373737" />
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -476,51 +477,52 @@
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:textColor="@android:color/black"
-                                            android:text="Future goal 1"
-                                            android:textStyle="bold"
-                                            android:textSize="10sp"
                                             android:layout_marginStart="13dp"
-                                            android:layout_marginTop="10dp"/>
+                                            android:layout_marginTop="10dp"
+                                            android:text="Future goal 1"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Touch to set a future goal"
-                                            android:textSize="8dp"
-                                            android:layout_marginStart="13dp"/>
+                                            android:layout_marginStart="13dp"
+                                            android:paddingEnd="9dp"
+                                            android:text="@string/fut_command"
+                                            android:textSize="8dp" />
 
                                         <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal"
-                                        android:gravity="end"
-                                        android:layout_marginTop="10dp">
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:gravity="end"
+                                            android:orientation="horizontal">
 
                                             <TextView
                                                 android:id="@+id/amountGoal1"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:textSize="13sp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                                android:layout_marginStart="1dp"
                                                 android:text="NOT SET"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                                 android:textColor="@android:color/black"
-                                                android:layout_marginStart="1dp" />
+                                                android:textSize="13sp" />
 
 
                                             <TextView
                                                 android:id="@+id/currency1"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:textSize="13sp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                                android:text="PLN"
-                                                android:visibility="invisible"
-                                                android:textColor="@android:color/black"
                                                 android:layout_marginStart="2dp"
-                                                android:layout_marginEnd="10dp"/>
+                                                android:layout_marginEnd="10dp"
+                                                android:text="PLN"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                                android:textColor="@android:color/black"
+                                                android:textSize="13sp"
+                                                android:visibility="invisible" />
 
-                                    </LinearLayout>
+                                        </LinearLayout>
 
                                     </LinearLayout>
 
@@ -541,10 +543,7 @@
         </androidx.cardview.widget.CardView>
 
 
-
-
     </LinearLayout>
-
 
 
 </LinearLayout>

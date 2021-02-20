@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import kotlinx.android.synthetic.main.editdep_layout.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
 
 class EditDepDialogFragment: DialogFragment() {
@@ -27,4 +28,17 @@ class EditDepDialogFragment: DialogFragment() {
         val newGoalDialogView = inflater.inflate(R.layout.editdep_layout, container, false)
         return newGoalDialogView
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupClickListener(view)
+    }
+
+    private fun setupClickListener(view: View) {
+        view.savebtn.setOnClickListener {
+            dismiss()
+        }
+    }
+
+
 }

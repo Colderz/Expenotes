@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import kotlinx.android.synthetic.main.goal_layout_info.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
 
 class InfoGoalDialogFragment: DialogFragment() {
@@ -26,5 +27,16 @@ class InfoGoalDialogFragment: DialogFragment() {
     ): View? {
         val infoGoalDialogView = inflater.inflate(R.layout.goal_layout_info, container, false)
         return infoGoalDialogView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupClickListener(view)
+    }
+
+    private fun setupClickListener(view: View) {
+        view.btnCancel.setOnClickListener {
+            dismiss()
+        }
     }
 }

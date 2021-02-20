@@ -92,7 +92,7 @@ class PlansFragment : Fragment() {
         when(requestCode) {
             viewModel.ENTERGOAL_FRAGMENT -> if(resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
-                var resultValue = bundle!!.getString("value", "error")
+                var resultValue: String = bundle!!.getString("value", "error")
                 var resultValue1 = bundle!!.getString("value1", "error")
                 var resultValue2 = bundle!!.getString("value2", "error")
                 if(!resultValue.equals("error")) {
@@ -115,6 +115,17 @@ class PlansFragment : Fragment() {
                 }
 
             }
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        walletOkFrom.setOnClickListener {
+            var amount: Int = 0
+            if(!amountGoal.toString().equals("NOT SET")) amount = Integer.valueOf(amountGoal.toString())
+            val amountChanged: Int = amount + 50
+            val itemChanged = GoalItem("main", amountChanged, Integer.valueOf(stateGoal.toString()))
+            viewModel.upsert(itemChanged)
         }
     }
 
