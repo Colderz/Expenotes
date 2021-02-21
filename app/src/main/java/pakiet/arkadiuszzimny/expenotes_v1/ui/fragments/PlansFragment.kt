@@ -73,6 +73,7 @@ class PlansFragment : Fragment() {
                     if (item.type.equals("main")) {
                         amountGoal.text = item.goal.toString()
                         currency.visibility = View.VISIBLE
+                        stateGoal.text = item.state.toString()
                     }
                     if(item.type.equals("fut1")) {
                         amountGoal1.text = item.goal.toString()
@@ -95,6 +96,7 @@ class PlansFragment : Fragment() {
                 var resultValue: String = bundle!!.getString("value", "error")
                 var resultValue1 = bundle!!.getString("value1", "error")
                 var resultValue2 = bundle!!.getString("value2", "error")
+                var resultValueDep = bundle!!.getString("valueDep", "error")
                 if(!resultValue.equals("error")) {
                     amountGoal.text = resultValue
                     currency.visibility = View.VISIBLE
@@ -113,7 +115,9 @@ class PlansFragment : Fragment() {
                     val item2 = GoalItem("fut2", Integer.valueOf(resultValue2), 0)
                     viewModel.upsert(item2)
                 }
-
+                if(!resultValueDep.equals("error")){
+                    depPlus.text = resultValueDep
+                }
             }
         }
     }
@@ -121,11 +125,12 @@ class PlansFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         walletOkFrom.setOnClickListener {
-            var amount: Int = 0
-            if(!amountGoal.toString().equals("NOT SET")) amount = Integer.valueOf(amountGoal.toString())
-            val amountChanged: Int = amount + 50
-            val itemChanged = GoalItem("main", amountChanged, Integer.valueOf(stateGoal.toString()))
-            viewModel.upsert(itemChanged)
+            if(!amountGoal.toString().equals("NOT SET")) {
+                var state = Integer.valueOf(stateGoal.text.toString()) + 50
+                var amountGoal = Integer.valueOf(amountGoal.text.toString())
+                val itemChanged = GoalItem("main", amountGoal, state)
+                viewModel.upsert(itemChanged)
+            }
         }
     }
 
