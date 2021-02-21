@@ -24,6 +24,7 @@ class PlansFragment : Fragment() {
 
     private val viewModel: PlansViewModel by viewModels()
     private lateinit var listOfGoals: LiveData<List<GoalItem>>
+    private var counter: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -133,10 +134,20 @@ class PlansFragment : Fragment() {
                 var state = Integer.valueOf(stateGoal.text.toString()) + Integer.valueOf(depPlus.text.toString())
                 var amountGoal = Integer.valueOf(amountGoal.text.toString())
                 val itemChanged = GoalItem("main", amountGoal, state)
+                if (state>=amountGoal) {
+                    ++counter
+                    Toast.makeText(context, "Target Achieved", Toast.LENGTH_LONG).show()
+                    if(counter==2) {
+                        counter = 0
+                        val dialogInstance = InfoGoalDialogFragment.newInstance()
+                        dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
+                        dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
+                        dialogInstance.show(parentFragmentManager.beginTransaction(), InfoGoalDialogFragment.TAG)
+                    }
+                }
                 viewModel.upsert(itemChanged)
                 progressBarGoal.max = amountGoal
                 progressBarGoal.progress = state
-                if (state>=amountGoal) Toast.makeText(context, "Target Achieved", Toast.LENGTH_LONG).show()
             }
         }
     }
