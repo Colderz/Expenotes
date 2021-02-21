@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -38,7 +39,6 @@ class PlansFragment : Fragment() {
                 dialogInstance.setTargetFragment(this@PlansFragment, viewModel.ENTERGOAL_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
                 dialogInstance.show(parentFragmentManager.beginTransaction(), NewGoalDialogFragment.TAG)
-
             }
         })
 
@@ -74,6 +74,8 @@ class PlansFragment : Fragment() {
                         amountGoal.text = item.goal.toString()
                         currency.visibility = View.VISIBLE
                         stateGoal.text = item.state.toString()
+                        progressBarGoal.max = Integer.valueOf(item.goal.toString())
+                        progressBarGoal.progress = Integer.valueOf(item.state.toString())
                     }
                     if(item.type.equals("fut1")) {
                         amountGoal1.text = item.goal.toString()
@@ -102,6 +104,8 @@ class PlansFragment : Fragment() {
                     currency.visibility = View.VISIBLE
                     val item = GoalItem("main", Integer.valueOf(resultValue), 0)
                     viewModel.upsert(item)
+                    progressBarGoal.max = Integer.valueOf(resultValue)
+                    progressBarGoal.progress = 0
                 }
                 if(!resultValue1.equals("error")) {
                     amountGoal1.text = resultValue1
@@ -126,10 +130,13 @@ class PlansFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         walletOkFrom.setOnClickListener {
             if(!amountGoal.toString().equals("NOT SET")) {
-                var state = Integer.valueOf(stateGoal.text.toString()) + 50
+                var state = Integer.valueOf(stateGoal.text.toString()) + Integer.valueOf(depPlus.text.toString())
                 var amountGoal = Integer.valueOf(amountGoal.text.toString())
                 val itemChanged = GoalItem("main", amountGoal, state)
                 viewModel.upsert(itemChanged)
+                progressBarGoal.max = amountGoal
+                progressBarGoal.progress = state
+                if (state>=amountGoal) Toast.makeText(context, "Target Achieved", Toast.LENGTH_LONG).show()
             }
         }
     }
