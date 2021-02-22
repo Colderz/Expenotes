@@ -123,6 +123,18 @@ class PlansFragment : Fragment() {
                     depPlus.text = resultValueDep
                 }
             }
+            viewModel.MANAGEGOAL_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
+                println("==========================JESTEM TU W TYM======================")
+                var bundle = data!!.extras
+                var resultValue: String = bundle!!.getString("delete", "error")
+                if (!(resultValue.equals("error"))) {
+                    if (!amountGoal1.equals("NOT SET")) {
+                        val itemMain =
+                            GoalItem("main", Integer.valueOf(amountGoal1.text.toString()), 0)
+                        viewModel.upsert(itemMain)
+                    }
+                }
+            }
         }
     }
 
@@ -140,7 +152,7 @@ class PlansFragment : Fragment() {
                     val itemChanged1 = GoalItem("main", amountGoal, amountGoal)
                     viewModel.upsert(itemChanged1)
                     val dialogInstance = InfoGoalDialogFragment.newInstance()
-                    dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
+                    dialogInstance.setTargetFragment(this@PlansFragment, viewModel.MANAGEGOAL_FRAGMENT)
                     dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
                     dialogInstance.show(parentFragmentManager.beginTransaction(), InfoGoalDialogFragment.TAG)
                 } else {
