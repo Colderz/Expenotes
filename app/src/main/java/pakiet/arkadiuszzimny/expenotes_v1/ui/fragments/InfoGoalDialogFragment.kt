@@ -11,9 +11,9 @@ import kotlinx.android.synthetic.main.goal_layout.*
 import kotlinx.android.synthetic.main.goal_layout_info.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
 
-class InfoGoalDialogFragment: DialogFragment() {
+class InfoGoalDialogFragment : DialogFragment() {
 
-    companion object{
+    companion object {
         const val TAG = "InfoGoalDialog"
         private lateinit var fragment: InfoGoalDialogFragment
 

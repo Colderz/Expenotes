@@ -329,8 +329,7 @@
                                     android:text="PLN"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                     android:textColor="@android:color/black"
-                                    android:textSize="16sp"
-                                    android:visibility="invisible" />
+                                    android:textSize="16sp" />
 
 
                             </LinearLayout>
@@ -429,7 +428,7 @@
                                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                                 android:textColor="@android:color/black"
                                                 android:textSize="13sp"
-                                                android:visibility="invisible" />
+                                                />
 
                                         </LinearLayout>
 
@@ -521,8 +520,7 @@
                                                 android:text="PLN"
                                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                                 android:textColor="@android:color/black"
-                                                android:textSize="13sp"
-                                                android:visibility="invisible" />
+                                                android:textSize="13sp" />
 
                                         </LinearLayout>
 

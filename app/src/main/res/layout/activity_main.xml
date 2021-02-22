@@ -55,10 +55,10 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/walletAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="51 232"
+                    android:text="0"
                     android:layout_marginTop="-2dp"
                     android:textColor="@android:color/white"
                     android:textSize="26sp"
@@ -94,10 +94,10 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/needAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2 567"
+                    android:text="0"
                     android:layout_marginTop="-2dp"
                     android:textColor="@android:color/white"
                     android:textSize="22sp"

@@ -85,18 +85,15 @@ class PlansFragment : Fragment() {
                 for (item in it) {
                     if (item.type.equals("main")) {
                         amountGoal.text = item.goal.toString()
-                        currency.visibility = View.VISIBLE
                         stateGoal.text = item.state.toString()
                         progressBarGoal.max = Integer.valueOf(item.goal.toString())
                         progressBarGoal.progress = Integer.valueOf(item.state.toString())
                     }
                     if (item.type.equals("fut1")) {
                         amountGoal1.text = item.goal.toString()
-                        currency1.visibility = View.VISIBLE
                     }
                     if (item.type.equals("fut2")) {
                         amountGoal2.text = item.goal.toString()
-                        currency2.visibility = View.VISIBLE
                     }
                 }
             }
@@ -114,7 +111,6 @@ class PlansFragment : Fragment() {
                 var resultValueDep = bundle!!.getString("valueDep", "error")
                 if (!resultValue.equals("error")) {
                     amountGoal.text = resultValue
-                    currency.visibility = View.VISIBLE
                     val item = GoalItem("main", Integer.valueOf(resultValue), 0)
                     viewModel.upsert(item)
                     progressBarGoal.max = Integer.valueOf(resultValue)
@@ -122,13 +118,11 @@ class PlansFragment : Fragment() {
                 }
                 if (!resultValue1.equals("error")) {
                     amountGoal1.text = resultValue1
-                    currency1.visibility = View.VISIBLE
                     val item1 = GoalItem("fut1", Integer.valueOf(resultValue1), 0)
                     viewModel.upsert(item1)
                 }
                 if (!resultValue2.equals("error")) {
                     amountGoal2.text = resultValue2
-                    currency2.visibility = View.VISIBLE
                     val item2 = GoalItem("fut2", Integer.valueOf(resultValue2), 0)
                     viewModel.upsert(item2)
                 }

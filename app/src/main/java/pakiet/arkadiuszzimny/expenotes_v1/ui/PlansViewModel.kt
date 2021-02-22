@@ -19,7 +19,10 @@ import kotlinx.coroutines.*
 import pakiet.arkadiuszzimny.expenotes_v1.data.db.GoalRepository
 import pakiet.arkadiuszzimny.expenotes_v1.data.db.entities.GoalItem
 
-class PlansViewModel @ViewModelInject constructor(application: Application, private var goalRepository: GoalRepository) : ViewModel() {
+class PlansViewModel @ViewModelInject constructor(
+    application: Application,
+    private var goalRepository: GoalRepository
+) : ViewModel() {
 
 
     private var allGoal: Deferred<LiveData<List<GoalItem>>> =
@@ -27,14 +30,14 @@ class PlansViewModel @ViewModelInject constructor(application: Application, priv
     val ENTERGOAL_FRAGMENT = 1
     val CHANGEDEPO_FRAGMENT = 1
     val MANAGEGOAL_FRAGMENT = 3
-    private val imageUrl = "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
+    private val imageUrl =
+        "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
 
     fun loadImageUsingGlide(
         fragment: Fragment,
         progressBar: ProgressBar,
         imageView: ImageView,
-    )
-    {
+    ) {
         progressBar.visibility = View.VISIBLE
         Glide.with(fragment).load(imageUrl).listener(object : RequestListener<Drawable> {
             override fun onLoadFailed(
@@ -68,7 +71,7 @@ class PlansViewModel @ViewModelInject constructor(application: Application, priv
         goalRepository.delete(item)
     }
 
-    fun getAllGoals() : LiveData<List<GoalItem>> = runBlocking {
+    fun getAllGoals(): LiveData<List<GoalItem>> = runBlocking {
         allGoal.await()
     }
 
