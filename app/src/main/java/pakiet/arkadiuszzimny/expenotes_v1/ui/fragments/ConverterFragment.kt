@@ -16,12 +16,12 @@ import kotlinx.android.synthetic.main.fragment_conv.*
 import kotlinx.android.synthetic.main.fragment_conv.view.*
 import kotlinx.coroutines.flow.collect
 import pakiet.arkadiuszzimny.expenotes_v1.R
-import pakiet.arkadiuszzimny.expenotes_v1.ui.MainViewModel
+import pakiet.arkadiuszzimny.expenotes_v1.ui.ConverterViewModel
 
 @AndroidEntryPoint
 class ConverterFragment : Fragment() {
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: ConverterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,14 +33,14 @@ class ConverterFragment : Fragment() {
         lifecycleScope.launchWhenStarted {
             viewModel.conversion.collect { event ->
                 when(event) {
-                    is MainViewModel.CurrencyEvent.Success -> {
+                    is ConverterViewModel.CurrencyEvent.Success -> {
                         tvAmountRight.text = event.resultText
                         tvGoalSecond.text = event.resultGoalText
                     }
-                    is MainViewModel.CurrencyEvent.Failure -> {
+                    is ConverterViewModel.CurrencyEvent.Failure -> {
                         tvAmountRight.text = event.errorText
                     }
-                    is MainViewModel.CurrencyEvent.Loading -> {
+                    is ConverterViewModel.CurrencyEvent.Loading -> {
 
                     }
                     else -> Unit

@@ -31,14 +31,21 @@ class PlansFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val goalsFragmentView: View = inflater.inflate(R.layout.fragment_plans, container, false)
-        viewModel.loadImageUsingGlide(this, goalsFragmentView.fragmentOneProgressBar, goalsFragmentView.createGoalImage)
+        viewModel.loadImageUsingGlide(
+            this,
+            goalsFragmentView.fragmentOneProgressBar,
+            goalsFragmentView.createGoalImage
+        )
 
         goalsFragmentView.createGoalImage.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 var dialogInstance = NewGoalDialogFragment.newInstance()
                 dialogInstance.setTargetFragment(this@PlansFragment, viewModel.ENTERGOAL_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-                dialogInstance.show(parentFragmentManager.beginTransaction(), NewGoalDialogFragment.TAG)
+                dialogInstance.show(
+                    parentFragmentManager.beginTransaction(),
+                    NewGoalDialogFragment.TAG
+                )
             }
         })
 
@@ -47,16 +54,22 @@ class PlansFragment : Fragment() {
                 val dialogInstance = InfoGoalDialogFragment.newInstance()
                 dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-                dialogInstance.show(parentFragmentManager.beginTransaction(), InfoGoalDialogFragment.TAG)
+                dialogInstance.show(
+                    parentFragmentManager.beginTransaction(),
+                    InfoGoalDialogFragment.TAG
+                )
             }
         })
 
         goalsFragmentView.editdep_btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val dialogInstance = EditDepDialogFragment.newInstance()
-                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.MANAGEGOAL_FRAGMENT)
+                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-                dialogInstance.show(parentFragmentManager.beginTransaction(), EditDepDialogFragment.TAG)
+                dialogInstance.show(
+                    parentFragmentManager.beginTransaction(),
+                    EditDepDialogFragment.TAG
+                )
             }
         })
 
@@ -77,11 +90,11 @@ class PlansFragment : Fragment() {
                         progressBarGoal.max = Integer.valueOf(item.goal.toString())
                         progressBarGoal.progress = Integer.valueOf(item.state.toString())
                     }
-                    if(item.type.equals("fut1")) {
+                    if (item.type.equals("fut1")) {
                         amountGoal1.text = item.goal.toString()
                         currency1.visibility = View.VISIBLE
                     }
-                    if(item.type.equals("fut2")) {
+                    if (item.type.equals("fut2")) {
                         amountGoal2.text = item.goal.toString()
                         currency2.visibility = View.VISIBLE
                     }
@@ -92,14 +105,14 @@ class PlansFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        when(requestCode) {
-            viewModel.ENTERGOAL_FRAGMENT -> if(resultCode == Activity.RESULT_OK) {
+        when (requestCode) {
+            viewModel.ENTERGOAL_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
                 var resultValue: String = bundle!!.getString("value", "error")
                 var resultValue1 = bundle!!.getString("value1", "error")
                 var resultValue2 = bundle!!.getString("value2", "error")
                 var resultValueDep = bundle!!.getString("valueDep", "error")
-                if(!resultValue.equals("error")) {
+                if (!resultValue.equals("error")) {
                     amountGoal.text = resultValue
                     currency.visibility = View.VISIBLE
                     val item = GoalItem("main", Integer.valueOf(resultValue), 0)
@@ -107,31 +120,42 @@ class PlansFragment : Fragment() {
                     progressBarGoal.max = Integer.valueOf(resultValue)
                     progressBarGoal.progress = 0
                 }
-                if(!resultValue1.equals("error")) {
+                if (!resultValue1.equals("error")) {
                     amountGoal1.text = resultValue1
                     currency1.visibility = View.VISIBLE
                     val item1 = GoalItem("fut1", Integer.valueOf(resultValue1), 0)
                     viewModel.upsert(item1)
                 }
-                if(!resultValue2.equals("error")) {
+                if (!resultValue2.equals("error")) {
                     amountGoal2.text = resultValue2
                     currency2.visibility = View.VISIBLE
                     val item2 = GoalItem("fut2", Integer.valueOf(resultValue2), 0)
                     viewModel.upsert(item2)
                 }
-                if(!resultValueDep.equals("error")){
+                if (!resultValueDep.equals("error")) {
                     depPlus.text = resultValueDep
                 }
             }
             viewModel.MANAGEGOAL_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
-                println("==========================JESTEM TU W TYM======================")
                 var bundle = data!!.extras
                 var resultValue: String = bundle!!.getString("delete", "error")
                 if (!(resultValue.equals("error"))) {
-                    if (!amountGoal1.equals("NOT SET")) {
+                    if (!amountGoal1.equals("0")) {
                         val itemMain =
                             GoalItem("main", Integer.valueOf(amountGoal1.text.toString()), 0)
                         viewModel.upsert(itemMain)
+                        if (!amountGoal2.equals("0")) {
+                            viewModel.upsert(
+                                GoalItem(
+                                    "fut1",
+                                    Integer.valueOf(amountGoal2.text.toString()),
+                                    0
+                                )
+                            )
+                            viewModel.upsert(GoalItem("fut2", 0, 0))
+                        } else {
+                            viewModel.upsert(GoalItem("fut1", 0, 0))
+                        }
                     }
                 }
             }
@@ -141,20 +165,27 @@ class PlansFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         walletOkFrom.setOnClickListener {
-            if(!amountGoal.toString().equals("NOT SET")) {
+            if (!amountGoal.toString().equals("0")) {
                 var stateBefore = Integer.valueOf(stateGoal.text.toString())
-                var stateAfter = Integer.valueOf(stateGoal.text.toString()) + Integer.valueOf(depPlus.text.toString())
+                var stateAfter =
+                    Integer.valueOf(stateGoal.text.toString()) + Integer.valueOf(depPlus.text.toString())
                 var amountGoal = Integer.valueOf(amountGoal.text.toString())
-                if(stateAfter>=amountGoal) {
-                    progressBarGoal.progress = stateBefore + (amountGoal-stateBefore)
+                if (stateAfter >= amountGoal) {
+                    progressBarGoal.progress = stateBefore + (amountGoal - stateBefore)
                     Toast.makeText(context, "Target Achieved", Toast.LENGTH_LONG).show()
                     stateGoal.text = amountGoal.toString()
                     val itemChanged1 = GoalItem("main", amountGoal, amountGoal)
                     viewModel.upsert(itemChanged1)
                     val dialogInstance = InfoGoalDialogFragment.newInstance()
-                    dialogInstance.setTargetFragment(this@PlansFragment, viewModel.MANAGEGOAL_FRAGMENT)
+                    dialogInstance.setTargetFragment(
+                        this@PlansFragment,
+                        viewModel.MANAGEGOAL_FRAGMENT
+                    )
                     dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-                    dialogInstance.show(parentFragmentManager.beginTransaction(), InfoGoalDialogFragment.TAG)
+                    dialogInstance.show(
+                        parentFragmentManager.beginTransaction(),
+                        InfoGoalDialogFragment.TAG
+                    )
                 } else {
                     val itemChanged = GoalItem("main", amountGoal, stateAfter)
                     viewModel.upsert(itemChanged)
