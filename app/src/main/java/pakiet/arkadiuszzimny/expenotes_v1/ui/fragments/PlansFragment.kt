@@ -24,7 +24,6 @@ class PlansFragment : Fragment() {
 
     private val viewModel: PlansViewModel by viewModels()
     private lateinit var listOfGoals: LiveData<List<GoalItem>>
-    private var counter: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -131,23 +130,25 @@ class PlansFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         walletOkFrom.setOnClickListener {
             if(!amountGoal.toString().equals("NOT SET")) {
-                var state = Integer.valueOf(stateGoal.text.toString()) + Integer.valueOf(depPlus.text.toString())
+                var stateBefore = Integer.valueOf(stateGoal.text.toString())
+                var stateAfter = Integer.valueOf(stateGoal.text.toString()) + Integer.valueOf(depPlus.text.toString())
                 var amountGoal = Integer.valueOf(amountGoal.text.toString())
-                val itemChanged = GoalItem("main", amountGoal, state)
-                if (state>=amountGoal) {
-                    ++counter
+                if(stateAfter>=amountGoal) {
+                    progressBarGoal.progress = stateBefore + (amountGoal-stateBefore)
                     Toast.makeText(context, "Target Achieved", Toast.LENGTH_LONG).show()
-                    if(counter==2) {
-                        counter = 0
-                        val dialogInstance = InfoGoalDialogFragment.newInstance()
-                        dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
-                        dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-                        dialogInstance.show(parentFragmentManager.beginTransaction(), InfoGoalDialogFragment.TAG)
-                    }
+                    stateGoal.text = amountGoal.toString()
+                    val itemChanged1 = GoalItem("main", amountGoal, amountGoal)
+                    viewModel.upsert(itemChanged1)
+                    val dialogInstance = InfoGoalDialogFragment.newInstance()
+                    dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
+                    dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
+                    dialogInstance.show(parentFragmentManager.beginTransaction(), InfoGoalDialogFragment.TAG)
+                } else {
+                    val itemChanged = GoalItem("main", amountGoal, stateAfter)
+                    viewModel.upsert(itemChanged)
+                    progressBarGoal.progress = stateAfter
                 }
-                viewModel.upsert(itemChanged)
-                progressBarGoal.max = amountGoal
-                progressBarGoal.progress = state
+
             }
         }
     }
