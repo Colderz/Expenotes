@@ -12,9 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_conv.*
 import kotlinx.android.synthetic.main.fragment_conv.view.*
 import kotlinx.coroutines.flow.collect
+import pakiet.arkadiuszzimny.expenotes_v1.MainActivity
 import pakiet.arkadiuszzimny.expenotes_v1.R
 import pakiet.arkadiuszzimny.expenotes_v1.ui.ConverterViewModel
 
@@ -32,7 +34,7 @@ class ConverterFragment : Fragment() {
 
         lifecycleScope.launchWhenStarted {
             viewModel.conversion.collect { event ->
-                when(event) {
+                when (event) {
                     is ConverterViewModel.CurrencyEvent.Success -> {
                         tvAmountRight.text = event.resultText
                         tvGoalSecond.text = event.resultGoalText
@@ -51,9 +53,15 @@ class ConverterFragment : Fragment() {
         converterFragmentView.tvAmountLeft.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 var dialogInstance = AmountDialogFragment.newInstance("Amount", "Editing")
-                dialogInstance.setTargetFragment(this@ConverterFragment, viewModel.ENTERAMOUNT_FRAGMENT)
+                dialogInstance.setTargetFragment(
+                    this@ConverterFragment,
+                    viewModel.ENTERAMOUNT_FRAGMENT
+                )
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-                dialogInstance.show(parentFragmentManager.beginTransaction(), AmountDialogFragment.TAG)
+                dialogInstance.show(
+                    parentFragmentManager.beginTransaction(),
+                    AmountDialogFragment.TAG
+                )
             }
         })
         converterFragmentView.btnConvert.setOnClickListener {
@@ -76,7 +84,7 @@ class ConverterFragment : Fragment() {
 
 
         converterFragmentView.pickerFrom.setOnScrollListener({ picker, state ->
-            if(state == SCROLL_STATE_IDLE) {
+            if (state == SCROLL_STATE_IDLE) {
                 picker.postDelayed({
                     tvFromCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
                     goalCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
@@ -84,7 +92,7 @@ class ConverterFragment : Fragment() {
             }
         })
         converterFragmentView.pickerTo.setOnScrollListener({ picker, state ->
-            if(state == SCROLL_STATE_IDLE) {
+            if (state == SCROLL_STATE_IDLE) {
                 picker.postDelayed({
                     tvToCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
                     goalCurrency2.text = viewModel.arrayOfCurrency.get(picker.value)
@@ -107,16 +115,18 @@ class ConverterFragment : Fragment() {
                 )
             }
         })
+        var activ: MainActivity = activity as MainActivity
+        converterFragmentView.tvGoalFirst.text = activ.needAmount.text.toString()
         return converterFragmentView
     }
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        when(requestCode) {
-            viewModel.ENTERAMOUNT_FRAGMENT -> if(resultCode == Activity.RESULT_OK) {
+        when (requestCode) {
+            viewModel.ENTERAMOUNT_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
-                var resultValue = bundle!!.getString("value","error")
+                var resultValue = bundle!!.getString("value", "error")
                 tvAmountLeft.text = resultValue
             }
         }
