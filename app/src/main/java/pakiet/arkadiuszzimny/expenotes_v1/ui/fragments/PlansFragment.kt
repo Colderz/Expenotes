@@ -129,28 +129,38 @@ class PlansFragment : Fragment() {
                 if (!resultValueDep.equals("error")) {
                     depPlus.text = resultValueDep
                 }
+                val needed: Int =
+                    Integer.valueOf(amountGoal.text.toString()) + Integer.valueOf(amountGoal1.text.toString()) + Integer.valueOf(
+                        amountGoal2.text.toString()
+                    )
+                viewModel.upsert(GoalItem("wallet", needed, Integer.valueOf(stateGoal.text.toString())))
             }
             viewModel.MANAGEGOAL_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
                 var resultValue: String = bundle!!.getString("delete", "error")
+                var needed = 0
                 if (!(resultValue.equals("error"))) {
                     if (!amountGoal1.equals("0")) {
                         val itemMain =
                             GoalItem("main", Integer.valueOf(amountGoal1.text.toString()), 0)
+                        needed += itemMain.goal
                         viewModel.upsert(itemMain)
                         if (!amountGoal2.equals("0")) {
+                            val item1 = GoalItem(
+                                "fut1",
+                                Integer.valueOf(amountGoal2.text.toString()),
+                                0
+                            )
+                            needed += item1.goal
                             viewModel.upsert(
-                                GoalItem(
-                                    "fut1",
-                                    Integer.valueOf(amountGoal2.text.toString()),
-                                    0
-                                )
+                                item1
                             )
                             viewModel.upsert(GoalItem("fut2", 0, 0))
                         } else {
                             viewModel.upsert(GoalItem("fut1", 0, 0))
                         }
                     }
+                    viewModel.upsert(GoalItem("wallet", needed, 0))
                 }
             }
         }
