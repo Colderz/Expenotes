@@ -52,7 +52,7 @@ class PlansFragment : Fragment() {
         goalsFragmentView.mainGoalCard.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val dialogInstance = InfoGoalDialogFragment.newInstance()
-                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
+                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.MANAGEGOAL_FRAGMENT)
                 dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
                 dialogInstance.show(
                     parentFragmentManager.beginTransaction(),
