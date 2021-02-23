@@ -133,7 +133,7 @@ class PlansFragment : Fragment() {
                     Integer.valueOf(amountGoal.text.toString()) + Integer.valueOf(amountGoal1.text.toString()) + Integer.valueOf(
                         amountGoal2.text.toString()
                     )
-                viewModel.upsert(GoalItem("wallet", needed, Integer.valueOf(stateGoal.text.toString())))
+                viewModel.upsert(GoalItem("wallet", needed, 0))
             }
             viewModel.MANAGEGOAL_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
@@ -173,12 +173,12 @@ class PlansFragment : Fragment() {
                 var stateBefore = Integer.valueOf(stateGoal.text.toString())
                 var stateAfter =
                     Integer.valueOf(stateGoal.text.toString()) + Integer.valueOf(depPlus.text.toString())
-                var amountGoal = Integer.valueOf(amountGoal.text.toString())
-                if (stateAfter >= amountGoal) {
-                    progressBarGoal.progress = stateBefore + (amountGoal - stateBefore)
+                var amountGoalVar = Integer.valueOf(amountGoal.text.toString())
+                if (stateAfter >= amountGoalVar) {
+                    progressBarGoal.progress = stateBefore + (amountGoalVar - stateBefore)
                     Toast.makeText(context, "Target Achieved", Toast.LENGTH_LONG).show()
                     stateGoal.text = amountGoal.toString()
-                    val itemChanged1 = GoalItem("main", amountGoal, amountGoal)
+                    val itemChanged1 = GoalItem("main", amountGoalVar, amountGoalVar)
                     viewModel.upsert(itemChanged1)
                     val dialogInstance = InfoGoalDialogFragment.newInstance()
                     dialogInstance.setTargetFragment(
@@ -191,11 +191,10 @@ class PlansFragment : Fragment() {
                         InfoGoalDialogFragment.TAG
                     )
                 } else {
-                    val itemChanged = GoalItem("main", amountGoal, stateAfter)
+                    val itemChanged = GoalItem("main", amountGoalVar, stateAfter)
                     viewModel.upsert(itemChanged)
                     progressBarGoal.progress = stateAfter
                 }
-
             }
         }
     }

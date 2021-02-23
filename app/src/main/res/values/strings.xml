@@ -10,5 +10,6 @@
     <string name="info">Currency rates are regularly updated in line with the data provided by the exchange rates API.</string>
     <string name="fut_command">Touch to delete. To change the goal, go to the goal edit</string>
     <string name="appInfo">Manage your goals, it\'s that simple! Create order in your home budget, 3 goals is challenging enough, complete the main goal to move on to the next one!</string>
+    <string name="titleAbove">Your notebook of financial goals</string>
 
 </resources>

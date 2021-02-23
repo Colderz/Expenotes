@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             if(it.isNotEmpty()) {
                 for(item in it) {
                     if(item.type.equals("wallet")) {
-                        walletAmount.text = item.state.toString()
+                        //walletAmount.text = item.state.toString()
                         needAmount.text = item.goal.toString()
                     }
                 }

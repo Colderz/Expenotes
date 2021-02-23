@@ -19,32 +19,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:paddingStart="29dp"
+                    android:layout_marginTop="12dp"
                     android:paddingTop="2dp"
-                    android:text="Wallet"
+                    android:text="@string/titleAbove"
                     android:textColor="@android:color/white"
                     android:textSize="12sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="end"
-                    android:paddingTop="7dp">
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="24dp"
-                        app:srcCompat="@drawable/ic_menu"
-                        />
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -52,46 +38,66 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
 
                 <TextView
                     android:id="@+id/walletAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="Expe"
                     android:layout_marginTop="-2dp"
                     android:textColor="@android:color/white"
-                    android:textSize="26sp"
-                    android:textStyle="bold"
-                    android:paddingStart="30dp"/>
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/walletAmount1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PLN"
+                    android:text="N"
                     android:layout_marginTop="-2dp"
-                    android:textSize="24sp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="27sp"
                     android:textStyle="bold"
+                    android:paddingStart="1.5dp"/>
+
+                <TextView
+                    android:id="@+id/walletAmount2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="otes"
+                    android:layout_marginTop="-2dp"
                     android:textColor="@android:color/white"
-                    android:paddingStart="5dp"/>
+                    android:textSize="27sp"
+                    android:textStyle="bold"
+                    android:paddingStart="1.5dp"/>
+
 
             </LinearLayout>
-
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Needed wherewithal"
-                android:textColor="@android:color/white"
-                android:textSize="13sp"
-                android:paddingStart="29dp"
-                android:paddingTop="12dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Needed wherewithal"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    android:paddingTop="12dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
 
                 <TextView
                     android:id="@+id/needAmount"
@@ -101,8 +107,7 @@
                     android:layout_marginTop="-2dp"
                     android:textColor="@android:color/white"
                     android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:paddingStart="30dp"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
