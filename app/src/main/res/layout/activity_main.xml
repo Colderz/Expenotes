@@ -60,7 +60,7 @@
                     android:textColor="@android:color/darker_gray"
                     android:textSize="27sp"
                     android:textStyle="bold"
-                    android:paddingStart="1.5dp"/>
+                    android:paddingStart="1dp"/>
 
                 <TextView
                     android:id="@+id/walletAmount2"
@@ -71,7 +71,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="27sp"
                     android:textStyle="bold"
-                    android:paddingStart="1.5dp"/>
+                    android:paddingStart="1dp"/>
 
 
             </LinearLayout>

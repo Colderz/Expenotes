@@ -177,7 +177,7 @@ class PlansFragment : Fragment() {
                 if (stateAfter >= amountGoalVar) {
                     progressBarGoal.progress = stateBefore + (amountGoalVar - stateBefore)
                     Toast.makeText(context, "Target Achieved", Toast.LENGTH_LONG).show()
-                    stateGoal.text = amountGoal.toString()
+                    stateGoal.text = amountGoal.text.toString()
                     val itemChanged1 = GoalItem("main", amountGoalVar, amountGoalVar)
                     viewModel.upsert(itemChanged1)
                     val dialogInstance = InfoGoalDialogFragment.newInstance()
