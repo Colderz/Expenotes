@@ -15,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_conv.*
 import kotlinx.android.synthetic.main.fragment_conv.view.*
+import kotlinx.android.synthetic.main.fragment_plans.*
 import kotlinx.coroutines.flow.collect
 import pakiet.arkadiuszzimny.expenotes_v1.MainActivity
 import pakiet.arkadiuszzimny.expenotes_v1.R
@@ -69,7 +70,8 @@ class ConverterFragment : Fragment() {
                 tvAmountLeft.text.toString(),
                 tvFromCurrency.text.toString(),
                 tvToCurrency.text.toString(),
-                tvGoalFirst.text.toString()
+                tvGoalFirst.text.toString(),
+                goalCurrency2Goal.text.toString()
             )
 
         }
@@ -87,7 +89,6 @@ class ConverterFragment : Fragment() {
             if (state == SCROLL_STATE_IDLE) {
                 picker.postDelayed({
                     tvFromCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
-                    goalCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
                 }, 200)
             }
         })
@@ -95,7 +96,7 @@ class ConverterFragment : Fragment() {
             if (state == SCROLL_STATE_IDLE) {
                 picker.postDelayed({
                     tvToCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
-                    goalCurrency2.text = viewModel.arrayOfCurrency.get(picker.value)
+                    goalCurrency2Goal.text = viewModel.arrayOfCurrency.get(picker.value)
                 }, 200)
             }
         })
@@ -111,7 +112,8 @@ class ConverterFragment : Fragment() {
                     tvAmountLeft.text.toString(),
                     tvFromCurrency.text.toString(),
                     tvToCurrency.text.toString(),
-                    tvGoalFirst.text.toString()
+                    tvGoalFirst.text.toString(),
+                    goalCurrency2Goal.text.toString()
                 )
             }
         })

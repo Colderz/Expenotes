@@ -338,26 +338,6 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginVertical="2dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="1dp"
-                                android:text="0"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                android:textSize="13sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginVertical="2dp"
-                                android:layout_marginStart="1dp"
-                                android:text="/"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                android:textColor="@android:color/black"
-                                android:textSize="16sp" />
-
-                            <TextView
                                 android:id="@+id/tvGoalFirst"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -369,7 +349,7 @@
                                 android:textSize="16sp" />
 
                             <TextView
-                                android:id="@+id/goalCurrency"
+                                android:id="@+id/goalCurrencyGoal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginVertical="2dp"
@@ -426,7 +406,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="18dp"
                                 android:layout_marginTop="10dp"
-                                android:text="Main goal"
+                                android:text="Sum of goals"
                                 android:textColor="@android:color/black"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -457,38 +437,18 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginVertical="2dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="1dp"
-                                android:text="0"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                android:textSize="13sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginVertical="2dp"
-                                android:layout_marginStart="1dp"
-                                android:text="/"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                android:textColor="@android:color/black"
-                                android:textSize="16sp" />
-
-                            <TextView
                                 android:id="@+id/tvGoalSecond"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginVertical="2dp"
                                 android:layout_marginStart="1dp"
-                                android:text=""
+                                android:text=" _ "
                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp" />
 
-                            <TextView
-                                android:id="@+id/goalCurrency2"
+                            \<TextView
+                                android:id="@+id/goalCurrency2Goal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginVertical="2dp"

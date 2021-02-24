@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.fragment_plans.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
 import pakiet.arkadiuszzimny.expenotes_v1.data.db.entities.GoalItem
 import pakiet.arkadiuszzimny.expenotes_v1.ui.PlansViewModel
+import java.util.*
 
 @AndroidEntryPoint
 class PlansFragment : Fragment() {
@@ -138,6 +139,7 @@ class PlansFragment : Fragment() {
             viewModel.MANAGEGOAL_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
                 var resultValue: String = bundle!!.getString("delete", "error")
+                var resultValueArchive: String = bundle!!.getString("archive", "error")
                 var needed = 0
                 if (!(resultValue.equals("error"))) {
                     if (!amountGoal1.equals("0")) {
@@ -161,6 +163,10 @@ class PlansFragment : Fragment() {
                         }
                     }
                     viewModel.upsert(GoalItem("wallet", needed, 0))
+                }
+                if(!resultValueArchive.equals("error")) {
+                    val itemArchive = GoalItem("archive"+"${Date().time}", Integer.valueOf(amountGoal.text.toString()), Integer.valueOf(stateGoal.text.toString()))
+                    viewModel.upsert(itemArchive)
                 }
             }
         }

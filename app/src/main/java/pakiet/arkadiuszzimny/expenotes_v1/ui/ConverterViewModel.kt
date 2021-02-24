@@ -71,6 +71,7 @@ class ConverterViewModel @ViewModelInject constructor(
         fromCurrency: String,
         toCurrency: String,
         amountGoal: String,
+        tvToCurrencyGoal: String
     ) {
         val fromAmount = amountStr.toFloatOrNull()
         val fromAmountGoal = amountGoal.toFloatOrNull()
@@ -87,11 +88,12 @@ class ConverterViewModel @ViewModelInject constructor(
                 is Resource.Success -> {
                     val rates = ratesResponse.data!!.rates
                     val rate = getRateForCurrency(toCurrency, rates)
+                    val rateGoal = getRateForCurrency(tvToCurrencyGoal, rates)
                     if (rate == null) {
                         _conversion.value = CurrencyEvent.Failure("Błąd")
                     } else {
                         val convertedCurrency = fromAmount * rate
-                        val convertedGoal1 = fromAmountGoal * rate
+                        val convertedGoal1 = fromAmountGoal * rateGoal!!
                         val decimal =
                             BigDecimal(convertedCurrency).setScale(2, RoundingMode.HALF_EVEN)
                         val decimal2 =
