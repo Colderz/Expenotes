@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_conv.*
 import kotlinx.android.synthetic.main.fragment_conv.view.*
 import kotlinx.android.synthetic.main.fragment_plans.*
 import kotlinx.coroutines.flow.collect
-import pakiet.arkadiuszzimny.expenotes_v1.MainActivity
+import pakiet.arkadiuszzimny.expenotes_v1.ui.MainActivity
 import pakiet.arkadiuszzimny.expenotes_v1.R
 import pakiet.arkadiuszzimny.expenotes_v1.ui.ConverterViewModel
 

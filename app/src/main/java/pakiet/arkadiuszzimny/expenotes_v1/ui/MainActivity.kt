@@ -1,4 +1,4 @@
-package pakiet.arkadiuszzimny.expenotes_v1
+package pakiet.arkadiuszzimny.expenotes_v1.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +10,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import pakiet.arkadiuszzimny.expenotes_v1.data.db.entities.GoalItem
 import pakiet.arkadiuszzimny.expenotes_v1.databinding.ActivityMainBinding
-import pakiet.arkadiuszzimny.expenotes_v1.ui.MainViewModel
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

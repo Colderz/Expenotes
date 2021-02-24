@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import pakiet.arkadiuszzimny.expenotes_v1.R
+import pakiet.arkadiuszzimny.expenotes_v1.data.db.entities.GoalItem
 
-class ArchiveAdapter : RecyclerView.Adapter<ArchiveAdapter.ViewHolder>() {
+class ArchiveAdapter(private val dataArrayList: List<GoalItem>) : RecyclerView.Adapter<ArchiveAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.archive_card_layout, parent, false)
@@ -15,7 +16,8 @@ class ArchiveAdapter : RecyclerView.Adapter<ArchiveAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        holder.stateGoal.text = dataArrayList[position].state.toString()
+        holder.amountGoal.text = dataArrayList[position].goal.toString()
     }
 
     override fun getItemCount(): Int {
