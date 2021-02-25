@@ -21,7 +21,7 @@ class ArchiveAdapter(private val dataArrayList: List<GoalItem>) : RecyclerView.A
     }
 
     override fun getItemCount(): Int {
-        return 0
+        return dataArrayList.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

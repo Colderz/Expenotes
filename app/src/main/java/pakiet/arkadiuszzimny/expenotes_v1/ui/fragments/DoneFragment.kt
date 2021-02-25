@@ -32,9 +32,16 @@ class DoneFragment : Fragment() {
         recyclerView = mView.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext().applicationContext)
         listOfGoals = viewModel.getAllGoals()
+        var listOfArchiveGoals: List<GoalItem> = listOf()
+
         listOfGoals.observe(viewLifecycleOwner, {
-            if(it.isNotEmpty()) {
-                archiveAdapter = ArchiveAdapter(it)
+            if (it.isNotEmpty()) {
+                listOfArchiveGoals = viewModel.filterArchiveGoals(it)
+                for (item in listOfArchiveGoals) {
+                    println("=====================dochodze tu")
+                    println(item.type)
+                }
+                archiveAdapter = ArchiveAdapter(listOfArchiveGoals)
                 recyclerView.adapter = archiveAdapter
             }
         })

@@ -27,4 +27,13 @@ class ArchiveViewModel @ViewModelInject constructor(
         allGoal.await()
     }
 
+    fun filterArchiveGoals(list: List<GoalItem>): ArrayList<GoalItem> {
+        var archiveList: ArrayList<GoalItem> = arrayListOf()
+        for(item in list) {
+                archiveList.add(item)
+
+        }
+        return archiveList
+    }
+
 }
