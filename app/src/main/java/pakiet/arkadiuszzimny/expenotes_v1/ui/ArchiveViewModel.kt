@@ -30,8 +30,9 @@ class ArchiveViewModel @ViewModelInject constructor(
     fun filterArchiveGoals(list: List<GoalItem>): ArrayList<GoalItem> {
         var archiveList: ArrayList<GoalItem> = arrayListOf()
         for(item in list) {
+            if (item.type.substring(0, 1).equals("a")) {
                 archiveList.add(item)
-
+            }
         }
         return archiveList
     }
