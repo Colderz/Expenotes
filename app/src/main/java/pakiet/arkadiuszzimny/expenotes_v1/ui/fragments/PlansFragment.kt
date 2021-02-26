@@ -167,6 +167,27 @@ class PlansFragment : Fragment() {
                 if(!resultValueArchive.equals("error")) {
                     val itemArchive = GoalItem("archive"+"${Date().time}", Integer.valueOf(amountGoal.text.toString()), Integer.valueOf(stateGoal.text.toString()))
                     viewModel.upsert(itemArchive)
+                    if (!amountGoal1.equals("0")) {
+                        val itemMain =
+                            GoalItem("main", Integer.valueOf(amountGoal1.text.toString()), 0)
+                        needed += itemMain.goal
+                        viewModel.upsert(itemMain)
+                        if (!amountGoal2.equals("0")) {
+                            val item1 = GoalItem(
+                                "fut1",
+                                Integer.valueOf(amountGoal2.text.toString()),
+                                0
+                            )
+                            needed += item1.goal
+                            viewModel.upsert(
+                                item1
+                            )
+                            viewModel.upsert(GoalItem("fut2", 0, 0))
+                        } else {
+                            viewModel.upsert(GoalItem("fut1", 0, 0))
+                        }
+                    }
+                    viewModel.upsert(GoalItem("wallet", needed, 0))
                 }
             }
         }

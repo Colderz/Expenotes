@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Expenotes_v1</string>
+    <string name="app_name">ExpeNotes</string>
     <string name="plans">Plans</string>
     <string name="conv">Converter</string>
     <string name="done">Completed</string>
