@@ -9,7 +9,7 @@ Screenshots will appear after finishing the final layout of the application
 
 # Kanban board @Trello
 
-[![N|Solid]()]()
+[![N|Solid](https://i.imgur.com/AXqrNj0.jpg)](https://trello.com/b/ENO9bgo6/expenotes)
 
 I created my own a Kanban Board by using Trello to manage tasks and issues. Click on the above image to see the the actual version.
 
