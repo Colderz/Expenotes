@@ -90,94 +90,112 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="start"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="15dp"
-                    android:layout_marginStart="22dp"
-                    android:text="@string/deposit1"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                android:layout_marginBottom="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="end"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginVertical="2dp"
+                    android:gravity="start"
                     android:orientation="horizontal">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="150dp"
-                        android:layout_height="33dp"
-                        android:layout_marginVertical="7dp"
-                        android:layout_marginEnd="10dp"
-                        android:clickable="true"
-                        app:cardCornerRadius="9dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="15dp"
+                        android:layout_marginStart="22dp"
+                        android:text="@string/deposit1"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
-                            <TextView
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="33dp"
+                            android:layout_marginVertical="7dp"
+                            android:layout_marginEnd="3dp"
+                            android:clickable="true"
+                            app:cardCornerRadius="9dp">
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginVertical="7dp"
-                                android:layout_marginStart="50dp"
-                                android:text="+"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                android:textColor="@android:color/black"
-                                android:textSize="14sp" />
+                                android:orientation="horizontal">
 
-                            <TextView
-                                android:id="@+id/depPlus"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginVertical="7dp"
-                                android:layout_marginStart="3dp"
-                                android:layout_marginEnd="30dp"
-                                android:text="50"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                android:textColor="@android:color/black"
-                                android:textSize="14sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="7dp"
+                                    android:layout_marginStart="50dp"
+                                    android:text="+"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/depPlus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="7dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_marginEnd="35dp"
+                                    android:text="50"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="14sp" />
 
 
-                            <ImageView
-                                android:id="@+id/walletOkFrom"
-                                android:layout_width="22dp"
-                                android:layout_height="22dp"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginEnd="13dp"
-                                android:clickable="true"
-                                app:srcCompat="@drawable/ic_add" />
+                                <ImageView
+                                    android:id="@+id/walletOkFrom"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="13dp"
+                                    android:clickable="true"
+                                    app:srcCompat="@drawable/ic_add" />
 
-                        </LinearLayout>
+                            </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
 
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="-1dp"
+                android:gravity="end">
+
+                <Button
+                    android:id="@+id/editdep_btn"
+                    android:layout_width="85dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="9dp"
+                    android:text="EDIT"
+                    android:textColor="@android:color/white"
+                    android:textSize="9sp" />
 
             </LinearLayout>
 
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/editdep_btn"
-        android:layout_width="90dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="20dp"
-        android:text="EDIT"
-        android:textColor="@android:color/white"
-        android:textSize="9sp" />
+    </androidx.cardview.widget.CardView>
 
 
     <LinearLayout
@@ -213,133 +231,276 @@
                     android:layout_marginTop="5dp"
                     android:background="#d2d2d2" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/mainGoalCard"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="105dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="11dp"
-                    android:clickable="true"
-                    app:cardCornerRadius="11dp">
+                    android:layout_height="118dp">
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/mainGoalCard"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorPrimary" />
+                        android:layout_height="105dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:clickable="true"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="11dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:gravity="end"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
 
                             <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="start"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="18dp"
-                                    android:layout_marginTop="10dp"
-                                    android:text="Main goal"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="start"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="18dp"
-                                    android:text="@string/command_main"
-                                    android:textSize="9dp" />
-
-                            </LinearLayout>
-
-                            <ProgressBar
-                                android:id="@+id/progressBarGoal"
-                                style="?android:attr/progressBarStyleHorizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="18dp"
-                                android:layout_marginTop="10dp"
-                                android:progress="0"
-                                android:progressTint="@color/colorSecond" />
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimary" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="end"
-                                android:orientation="horizontal">
+                                android:orientation="vertical">
 
-                                <TextView
-                                    android:id="@+id/stateGoal"
-                                    android:layout_width="wrap_content"
+                                <LinearLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginVertical="2dp"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_marginEnd="1dp"
-                                    android:text="0"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                    android:textSize="13sp" />
+                                    android:gravity="start"
+                                    android:orientation="horizontal">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="18dp"
+                                        android:layout_marginTop="10dp"
+                                        android:text="Main goal"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginVertical="2dp"
-                                    android:layout_marginStart="2dp"
-                                    android:text="/"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="16sp" />
+                                    android:gravity="start"
+                                    android:orientation="horizontal">
 
-                                <TextView
-                                    android:id="@+id/amountGoal"
-                                    android:layout_width="wrap_content"
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="18dp"
+                                        android:text="@string/command_main"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+                                <ProgressBar
+                                    android:id="@+id/progressBarGoal"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginVertical="2dp"
-                                    android:layout_marginStart="2dp"
-                                    android:text="0"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="16sp" />
+                                    android:layout_marginHorizontal="18dp"
+                                    android:layout_marginTop="10dp"
+                                    android:progress="0"
+                                    android:progressTint="@color/colorSecond" />
 
-                                <TextView
-                                    android:id="@+id/currency"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginVertical="2dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_marginEnd="18dp"
-                                    android:text="PLN"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="16sp" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="end"
+                                    android:orientation="horizontal">
 
+                                    <TextView
+                                        android:id="@+id/stateGoal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="2dp"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_marginEnd="1dp"
+                                        android:text="0"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                        android:textSize="13sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="2dp"
+                                        android:layout_marginStart="2dp"
+                                        android:text="/"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/amountGoal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="2dp"
+                                        android:layout_marginStart="2dp"
+                                        android:text="0"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/currency"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="2dp"
+                                        android:layout_marginStart="2dp"
+                                        android:layout_marginEnd="18dp"
+                                        android:text="PLN"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp" />
+
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
                         </LinearLayout>
 
-                    </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/mainGoalCard1"
+                        android:layout_width="match_parent"
+                        android:layout_height="105dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:alpha="0.0"
+                        android:clickable="true"
+                        app:cardCornerRadius="11dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimary" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="end"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="18dp"
+                                        android:layout_marginTop="10dp"
+                                        android:text="Main goal"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="18dp"
+                                        android:text="@string/command_main"
+                                        android:textSize="9dp" />
+
+                                </LinearLayout>
+
+                                <ProgressBar
+                                    android:id="@+id/progressBarGoal1"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="18dp"
+                                    android:layout_marginTop="10dp"
+                                    android:progress="0"
+                                    android:progressTint="@color/colorSecond" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="end"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/stateGoal1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="2dp"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_marginEnd="1dp"
+                                        android:text="0"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                        android:textSize="13sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="2dp"
+                                        android:layout_marginStart="2dp"
+                                        android:text="/"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/amountGoalBack"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="2dp"
+                                        android:layout_marginStart="2dp"
+                                        android:text="0"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/currencyBack"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="2dp"
+                                        android:layout_marginStart="2dp"
+                                        android:layout_marginEnd="18dp"
+                                        android:text="PLN"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp" />
 
 
-                </androidx.cardview.widget.CardView>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -354,7 +515,7 @@
                             android:id="@+id/cardView2"
                             android:layout_width="0dp"
                             android:layout_height="75dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="1dp"
                             android:layout_marginEnd="10dp"
                             app:cardCornerRadius="8dp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -445,7 +606,7 @@
                             android:layout_width="0dp"
                             android:layout_height="75dp"
                             android:layout_marginStart="10dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="1dp"
                             android:layout_marginEnd="10dp"
                             app:cardCornerRadius="8dp"
                             app:layout_constraintBottom_toBottomOf="parent"
