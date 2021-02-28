@@ -13,6 +13,11 @@
         <item name="colorOnSecondary">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
     </style>
+
+    <style name="CircularDeterminateProgressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/circlepb</item>
+    </style>
   
 
 </resources>

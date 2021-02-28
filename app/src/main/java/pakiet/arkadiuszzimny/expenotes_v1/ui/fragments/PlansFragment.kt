@@ -67,35 +67,35 @@ class PlansFragment : Fragment() {
             }
         })
 
-        //goalsFragmentView.editdep_btn.setOnClickListener(object : View.OnClickListener {
-        //    override fun onClick(v: View?) {
-        //        val dialogInstance = EditDepDialogFragment.newInstance()
-        //        dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
-        //        dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-        //        dialogInstance.show(
-        //            parentFragmentManager.beginTransaction(),
-        //            EditDepDialogFragment.TAG
-        //        )
-        //    }
-        //})
+        goalsFragmentView.editdep_btn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val dialogInstance = EditDepDialogFragment.newInstance()
+                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.CHANGEDEPO_FRAGMENT)
+                dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
+                dialogInstance.show(
+                    parentFragmentManager.beginTransaction(),
+                    EditDepDialogFragment.TAG
+                )
+            }
+        })
 
         val scale = this.resources.displayMetrics.density
         goalsFragmentView.mainGoalCard.cameraDistance = 8000 * scale
-        goalsFragmentView.mainGoalCard1.cameraDistance = 8000 * scale
+        goalsFragmentView.mainGoalCardBack.cameraDistance = 8000 * scale
 
         front_anim =
             AnimatorInflater.loadAnimator(context, R.animator.front_animator) as AnimatorSet
         back_anim = AnimatorInflater.loadAnimator(context, R.animator.back_animator) as AnimatorSet
 
-        goalsFragmentView.editdep_btn.setOnClickListener {
+        goalsFragmentView.flip_btn.setOnClickListener {
             if(isFront) {
                 front_anim.setTarget(goalsFragmentView.mainGoalCard)
-                back_anim.setTarget(goalsFragmentView.mainGoalCard1)
+                back_anim.setTarget(goalsFragmentView.mainGoalCardBack)
                 front_anim.start()
                 back_anim.start()
                 isFront = false
             } else {
-                front_anim.setTarget(goalsFragmentView.mainGoalCard1)
+                front_anim.setTarget(goalsFragmentView.mainGoalCardBack)
                 back_anim.setTarget(goalsFragmentView.mainGoalCard)
                 back_anim.start()
                 front_anim.start()
