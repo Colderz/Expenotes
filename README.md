@@ -43,7 +43,7 @@ I created my own a Kanban Board by using Trello to manage tasks and issues. Clic
   - Push notifications
   - Material Design
 
-Installation form the Android Studio
+### Installation form the Android Studio
 The application requires API keys and configuration of them. Take a look at the following table:
 
 | Service URL | Info |
