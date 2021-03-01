@@ -9,6 +9,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
@@ -88,6 +90,8 @@ class PlansFragment : Fragment() {
         back_anim = AnimatorInflater.loadAnimator(context, R.animator.back_animator) as AnimatorSet
 
         goalsFragmentView.flip_btn.setOnClickListener {
+            val animation: Animation = AnimationUtils.loadAnimation(context, R.anim.rotate_anim)
+            flip_btn.startAnimation(animation)
             if (isFront) {
                 front_anim.setTarget(goalsFragmentView.mainGoalCard)
                 back_anim.setTarget(goalsFragmentView.mainGoalCardBack)

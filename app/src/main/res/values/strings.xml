@@ -15,5 +15,6 @@
     <string name="command_flip">Flip the main card to see the progress of the target</string>
     <string name="info_save">Save to reach the goal</string>
     <string name="info_flip">When you reach a goal, you can delete or archive it. The future goal 1 becomes the main goal.</string>
+    <string name="errorenter">A value must be entered</string>
 
 </resources>

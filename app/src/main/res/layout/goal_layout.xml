@@ -54,7 +54,7 @@
                     android:id="@+id/tilFrom"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="200dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="Goal">
 

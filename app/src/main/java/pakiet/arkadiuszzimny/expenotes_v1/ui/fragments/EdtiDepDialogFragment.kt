@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.editdep_layout.*
 import kotlinx.android.synthetic.main.editdep_layout.view.*
@@ -41,10 +42,14 @@ class EditDepDialogFragment: DialogFragment() {
 
     private fun setupClickListener(view: View) {
         view.savebtn.setOnClickListener {
-            var intent = Intent()
-            intent.putExtra("valueDep", etDep.text.toString())
-            targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
-            dismiss()
+            if (etDep.text.toString().equals("")) {
+                Toast.makeText(context, R.string.errorenter, Toast.LENGTH_SHORT).show()
+            } else {
+                var intent = Intent()
+                intent.putExtra("valueDep", etDep.text.toString())
+                targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
+                dismiss()
+            }
         }
     }
 

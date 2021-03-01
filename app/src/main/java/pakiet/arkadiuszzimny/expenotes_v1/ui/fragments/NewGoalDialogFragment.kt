@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import kotlinx.android.synthetic.main.goal_layout.*
@@ -43,22 +44,35 @@ class NewGoalDialogFragment : DialogFragment() {
 
     private fun setupClickListener(view: View) {
         view.savebtn.setOnClickListener {
-            var intent = Intent()
-            intent.putExtra("value", etGoal.text.toString())
-            targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
-            dismiss()
+            if (etGoal.text.toString().equals("")) {
+                Toast.makeText(context, R.string.errorenter, Toast.LENGTH_SHORT).show()
+            } else {
+                var intent = Intent()
+                intent.putExtra("value", etGoal.text.toString())
+                targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
+                dismiss()
+            }
+
         }
         view.savebtn1.setOnClickListener {
-            var intent1 = Intent()
-            intent1.putExtra("value1", etGoal.text.toString())
-            targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent1)
-            dismiss()
+            if (etGoal.text.toString().equals("")) {
+                Toast.makeText(context, R.string.errorenter, Toast.LENGTH_SHORT).show()
+            } else {
+                var intent1 = Intent()
+                intent1.putExtra("value1", etGoal.text.toString())
+                targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent1)
+                dismiss()
+            }
         }
         view.savebtn2.setOnClickListener {
-            var intent2 = Intent()
-            intent2.putExtra("value2", etGoal.text.toString())
-            targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent2)
-            dismiss()
+            if (etGoal.text.toString().equals("")) {
+                Toast.makeText(context, R.string.errorenter, Toast.LENGTH_SHORT).show()
+            } else {
+                var intent2 = Intent()
+                intent2.putExtra("value2", etGoal.text.toString())
+                targetFragment!!.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent2)
+                dismiss()
+            }
         }
     }
 }

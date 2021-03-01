@@ -129,7 +129,11 @@ class ConverterFragment : Fragment() {
             viewModel.ENTERAMOUNT_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
                 var resultValue = bundle!!.getString("value", "error")
-                tvAmountLeft.text = resultValue
+                if(resultValue.equals("")) {
+                    tvAmountLeft.text = "0"
+                } else {
+                    tvAmountLeft.text = resultValue
+                }
             }
         }
 
