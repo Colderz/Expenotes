@@ -118,7 +118,6 @@
         android:layout_marginVertical="1dp"
         android:gravity="center"
         android:text="@string/command1"
-        android:textColor="@android:color/black"
         android:textSize="10sp" />
 
     <androidx.cardview.widget.CardView
@@ -140,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="28dp"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="44dp"
                 android:text="From"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                 android:textSize="16sp" />
@@ -175,8 +174,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginEnd="28dp"
-                android:layout_marginStart="59dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginStart="54dp"
                 android:text="To"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                 android:textSize="16sp" />

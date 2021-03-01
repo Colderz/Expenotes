@@ -1,100 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="260dp"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:background="@drawable/rounded_dialog"
-        android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50dp">
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/dialogName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What do you want to do?"
-            android:id="@+id/dialogName"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="65dp"/>
-
+            android:layout_marginTop="50dp"
+            android:text="What do you want to do?"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
 
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="130dp"
             android:layout_height="45dp"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
             android:layout_marginTop="5dp"
-            android:text="Delete"/>
+            android:text="Delete"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btnArchive"
             android:layout_width="130dp"
             android:layout_height="45dp"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
             android:layout_marginTop="2dp"
-            android:text="Archive"/>
+            android:text="Archive"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btnCancel"
             android:layout_width="130dp"
             android:layout_height="45dp"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
             android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
             android:text="Cancel"
-            android:layout_marginBottom="10dp"/>
-
-
-
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvAmount"
-        android:layout_width="120dp"
-        android:layout_height="105dp"
-        app:cardCornerRadius="13dp"
-        android:background="@android:color/white"
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@android:color/white"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Main goal"
-                android:textSize="20sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:text="By removing this target, the future becomes the main target!"
-                android:gravity="center_horizontal"
-                android:paddingHorizontal="4dp"/>
-
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        android:src="@drawable/logo3x" />
 
 </RelativeLayout>

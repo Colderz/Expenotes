@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="260dp"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_width="215dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:background="@drawable/rounded_dialog"
-        android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50dp">
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/dialogName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="How much should the standard deposit be?"
-            android:id="@+id/dialogName"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="45dp"
             android:gravity="center"
-            android:layout_marginTop="65dp"/>
-
+            android:text="How much should the standard deposit be?"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="190dp"
-            android:layout_height="105dp"
-            android:background="#f2f2f2"
-            app:cardCornerRadius="14dp"
+            android:layout_width="170dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp">
+            android:background="#f2f2f2"
+            app:cardCornerRadius="14dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:background="#f2f2f2"
-                android:paddingTop="4dp">
+                android:orientation="vertical"
+                android:paddingTop="3dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilFrom"
@@ -52,18 +51,18 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etDep"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="140dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
                         android:inputType="numberPassword"
                         android:maxLength="6"
-                        android:background="@android:color/white"
-                        app:hintTextAppearance="@android:color/black"
-                        android:gravity="center"
                         android:textColorHint="@android:color/black"
-                        app:hintTextColor="@android:color/black"
-                        android:layout_marginVertical="4dp"
-                        android:layout_marginHorizontal="20dp"
-                        />
+                        app:hintTextAppearance="@android:color/black"
+                        app:hintTextColor="@android:color/black" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -72,47 +71,23 @@
                     android:id="@+id/savebtn"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:background="@drawable/rounded_dialog"
-                    android:textColor="@android:color/white"
-                    android:textSize="12sp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Accept"/>
+                    android:background="@drawable/rounded_dialog"
+                    android:text="Accept"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
 
-
-
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvAmount"
-        android:layout_width="120dp"
-        android:layout_height="105dp"
-        app:cardCornerRadius="13dp"
-        android:background="@android:color/white"
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@android:color/white"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@android:color/black"
-                android:text="Edit standard donation to goal"
-                android:gravity="center_horizontal"
-                android:paddingHorizontal="4dp"/>
-
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        android:src="@drawable/logo3x" />
 
 </RelativeLayout>

@@ -11,8 +11,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
         android:text="Current goals"
         android:textStyle="bold" />
 
@@ -231,8 +231,8 @@
 
                     <ImageView
                         android:id="@+id/flip_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
                         android:layout_marginTop="23dp"
                         android:layout_marginEnd="25dp"
                         android:clickable="true"
@@ -331,10 +331,10 @@
 
                     </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="4dp"
+                    <LinearLayout
+                        android:layout_width="8dp"
                         android:layout_height="match_parent"
-                        android:layout_marginVertical="21dp"
+
                         android:foreground="@color/colorSecond" />
 
                 </LinearLayout>
@@ -345,9 +345,9 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/mainGoalCardBack"
                 android:layout_width="match_parent"
-                android:layout_height="105dp"
-                app:cardCornerRadius="5dp"
+                android:layout_height="95dp"
                 android:alpha="0.0"
+                app:cardCornerRadius="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -360,10 +360,9 @@
                     android:orientation="horizontal">
 
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="4dp"
+                    <LinearLayout
+                        android:layout_width="8dp"
                         android:layout_height="match_parent"
-                        android:layout_marginVertical="21dp"
                         android:foreground="@color/colorSecond" />
 
                     <LinearLayout
@@ -374,19 +373,18 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            >
+                            android:layout_height="wrap_content">
 
                             <ProgressBar
                                 android:id="@+id/progressBarGoal"
                                 style="@style/CircularDeterminateProgressBar"
                                 android:layout_width="88dp"
                                 android:layout_height="88dp"
+                                android:layout_marginStart="25dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                android:layout_marginStart="25dp"
                                 tools:progress="60" />
 
                             <LinearLayout
@@ -447,9 +445,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
+                            android:paddingHorizontal="40dp"
                             android:text="@string/info_flip"
                             android:textColor="@color/black"
-                            android:paddingHorizontal="40dp"
                             android:textSize="10sp" />
                     </LinearLayout>
 
@@ -463,8 +461,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="-10dp"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="-14dp"
             app:cardCornerRadius="5dp">
 
             <LinearLayout
@@ -477,10 +475,9 @@
                     android:layout_height="match_parent"
                     android:gravity="end">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="4dp"
+                    <LinearLayout
+                        android:layout_width="5dp"
                         android:layout_height="match_parent"
-                        android:layout_marginVertical="14dp"
                         android:foreground="@color/colorSecond" />
 
 
@@ -495,25 +492,25 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
                         android:text="Future goal 1"
-                        android:textStyle="bold"
                         android:textColor="@color/colorAccent"
-                        android:textSize="12sp" 
-                        android:layout_marginStart="15dp"/>
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -541,8 +538,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="2dp"
-                                android:text="PLN"
                                 android:layout_marginEnd="25dp"
+                                android:text="PLN"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                 android:textColor="@android:color/black"
                                 android:textSize="13sp" />
@@ -551,20 +548,20 @@
 
                     </LinearLayout>
 
-                    
+
                 </LinearLayout>
-                
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginHorizontal="20dp"
-            app:cardCornerRadius="5dp"
-            android:layout_marginBottom="5dp">
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -576,10 +573,9 @@
                     android:layout_height="match_parent"
                     android:gravity="end">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="4dp"
+                    <LinearLayout
+                        android:layout_width="5dp"
                         android:layout_height="match_parent"
-                        android:layout_marginVertical="14dp"
                         android:foreground="@color/colorSecond" />
 
 
@@ -594,25 +590,25 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
                         android:text="Future goal 2"
-                        android:textStyle="bold"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp"
-                        android:layout_marginStart="15dp"/>
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -640,8 +636,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="2dp"
-                                android:text="PLN"
                                 android:layout_marginEnd="25dp"
+                                android:text="PLN"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Display4"
                                 android:textColor="@android:color/black"
                                 android:textSize="13sp" />

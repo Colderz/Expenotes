@@ -88,7 +88,7 @@ class PlansFragment : Fragment() {
         back_anim = AnimatorInflater.loadAnimator(context, R.animator.back_animator) as AnimatorSet
 
         goalsFragmentView.flip_btn.setOnClickListener {
-            if(isFront) {
+            if (isFront) {
                 front_anim.setTarget(goalsFragmentView.mainGoalCard)
                 back_anim.setTarget(goalsFragmentView.mainGoalCardBack)
                 front_anim.start()

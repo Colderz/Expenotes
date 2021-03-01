@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="260dp"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:background="@drawable/rounded_dialog"
-        android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50dp">
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/dialogName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
             android:text="New goal"
-            android:id="@+id/dialogName"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:layout_marginTop="65dp"/>
+            android:textSize="21sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/subTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
-            android:gravity="center"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
             android:text="The target you create will replace the current one"
             android:textColor="@android:color/white"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="10dp" />
+            android:textSize="11sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="230dp"
             android:layout_height="105dp"
+            android:layout_marginBottom="20dp"
             android:background="#f2f2f2"
-            app:cardCornerRadius="14dp"
-            android:layout_marginBottom="20dp">
+            app:cardCornerRadius="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:background="#f2f2f2"
+                android:orientation="vertical"
                 android:paddingTop="4dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilFrom"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
                     android:hint="Goal">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etGoal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
                         android:inputType="numberPassword"
                         android:maxLength="4"
-                        android:background="@android:color/white"
-                        app:hintTextAppearance="@android:color/black"
-                        android:gravity="center"
                         android:textColorHint="@android:color/black"
-                        app:hintTextColor="@android:color/black"
-                        android:layout_marginVertical="4dp"
-                        android:layout_marginHorizontal="20dp"
-                        />
+                        app:hintTextAppearance="@android:color/black"
+                        app:hintTextColor="@android:color/black" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -89,31 +89,29 @@
                             android:id="@+id/savebtn"
                             android:layout_width="0dp"
                             android:layout_height="45dp"
-                            android:background="@drawable/rounded_dialog"
                             android:layout_marginHorizontal="7dp"
+                            android:background="@drawable/rounded_dialog"
                             android:text="Main"
                             android:textColor="@android:color/white"
                             android:textSize="10sp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/savebtn1"
                             app:layout_constraintStart_toStartOf="parent"
-                            />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
                             android:id="@+id/savebtn1"
                             android:layout_width="0dp"
                             android:layout_height="45dp"
-                            android:background="@drawable/rounded_dialog"
                             android:layout_marginHorizontal="7dp"
+                            android:background="@drawable/rounded_dialog"
                             android:text="Main 1"
                             android:textColor="@android:color/white"
                             android:textSize="10sp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/savebtn2"
                             app:layout_constraintStart_toEndOf="@id/savebtn"
-                            />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
                             android:id="@+id/savebtn2"
@@ -125,13 +123,11 @@
                             android:textColor="@android:color/white"
                             android:textSize="10sp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/savebtn1"
-                             />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
                 </LinearLayout>
@@ -140,45 +136,13 @@
         </androidx.cardview.widget.CardView>
 
 
-
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvAmount"
-        android:layout_width="120dp"
-        android:layout_height="105dp"
-        app:cardCornerRadius="13dp"
-        android:background="@android:color/white"
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@android:color/white"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Create goal"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:text="Enter the amount of the current goal"
-                android:gravity="center_horizontal"
-                android:paddingHorizontal="7dp"/>
-
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        android:src="@drawable/logo3x" />
 
 </RelativeLayout>
