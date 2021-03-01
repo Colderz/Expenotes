@@ -53,7 +53,7 @@
 
                 <ProgressBar
                     android:id="@+id/progressBarCounter"
-                    style="@style/CircularDeterminateProgressBar"
+                    style="@style/CircularDeterminateProgressBarStat"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:layout_marginTop="15dp"
@@ -127,7 +127,7 @@
 
                 <ProgressBar
                     android:id="@+id/progressBarArchivedGoals"
-                    style="@style/CircularDeterminateProgressBar"
+                    style="@style/CircularDeterminateProgressBarStat"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:layout_marginTop="15dp"

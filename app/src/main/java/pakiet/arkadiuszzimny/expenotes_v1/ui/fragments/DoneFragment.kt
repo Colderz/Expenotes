@@ -11,6 +11,7 @@ import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.archive_card_layout.view.*
 import kotlinx.android.synthetic.main.fragment_done.*
@@ -60,6 +61,9 @@ class DoneFragment : Fragment() {
             }
         })
 
+        val itemTouchHelperCallback = ItemTouchHelper(simpleCallback)
+        itemTouchHelperCallback.attachToRecyclerView(recyclerView)
+
         return mView
     }
 
@@ -72,6 +76,48 @@ class DoneFragment : Fragment() {
         view.progressBarCounter.progress = leftDone
         view.progressBarArchivedGoals.max = rightArchive
         view.progressBarArchivedGoals.progress = rightDone
+    }
+
+    private var simpleCallback = object: ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT.or(ItemTouchHelper.RIGHT)) {
+
+        lateinit var deletedGoal: GoalItem
+
+        override fun onMove(
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder,
+            target: RecyclerView.ViewHolder
+        ): Boolean {
+            return true
+        }
+
+        fun undoDeleted() {
+            Snackbar.make(
+                recyclerView, "Archived goal deleted",
+                Snackbar.LENGTH_LONG
+            ).setAction("Undo", {
+                val state = deletedGoal.state
+                val goal = deletedGoal.goal
+                val type = deletedGoal.type
+                val itemGoal = GoalItem(type, goal, state)
+                viewModel.upsert(itemGoal)
+            }).show()
+        }
+
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+            var position = viewHolder.adapterPosition
+            when(direction) {
+                ItemTouchHelper.LEFT -> {
+                    deletedGoal = listOfArchiveGoals.get(position)
+                    viewModel.deleteGoal(deletedGoal)
+                    undoDeleted()
+                }
+                ItemTouchHelper.RIGHT -> {
+                    deletedGoal = listOfArchiveGoals.get(position)
+                    viewModel.deleteGoal(deletedGoal)
+                    undoDeleted()
+                }
+            }
+        }
     }
 
 }
