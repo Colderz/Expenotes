@@ -5,7 +5,7 @@
 
 # Screenshots
 
-Screenshots will appear after finishing the final layout of the application
+![N|Solid](https://i.imgur.com/u1sg3aG.jpg) ![N|Solid](https://i.imgur.com/PKR9FQG.jpg) ![N|Solid](https://i.imgur.com/dNqh41n.jpg)
 
 # Kanban board @Trello
 
