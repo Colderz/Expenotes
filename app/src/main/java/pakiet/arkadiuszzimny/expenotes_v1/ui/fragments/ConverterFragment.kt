@@ -3,6 +3,7 @@ package pakiet.arkadiuszzimny.expenotes_v1.ui.fragments
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -73,7 +74,6 @@ class ConverterFragment : Fragment() {
                 tvGoalFirst.text.toString(),
                 goalCurrency2Goal.text.toString()
             )
-
         }
         converterFragmentView.pickerFrom.minValue = 0
         converterFragmentView.pickerFrom.maxValue = 31

@@ -231,8 +231,8 @@
 
                     <ImageView
                         android:id="@+id/flip_btn"
-                        android:layout_width="27dp"
-                        android:layout_height="27dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:layout_marginTop="23dp"
                         android:layout_marginEnd="25dp"
                         android:clickable="true"

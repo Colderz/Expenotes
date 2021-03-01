@@ -23,6 +23,10 @@
         <item name="android:indeterminateOnly">false</item>
         <item name="android:progressDrawable">@drawable/circlestat</item>
     </style>
+
+    <style name="Theme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
   
 
 </resources>
