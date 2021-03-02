@@ -3,6 +3,7 @@ package pakiet.arkadiuszzimny.expenotes_v1.ui.fragments
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

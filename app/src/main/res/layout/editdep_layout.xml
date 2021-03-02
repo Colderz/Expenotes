@@ -58,7 +58,7 @@
                         android:layout_marginVertical="4dp"
                         android:background="@android:color/white"
                         android:gravity="center"
-                        android:inputType="numberPassword"
+                        android:inputType="numberDecimal"
                         android:maxLength="4"
                         android:textColorHint="@android:color/black"
                         app:hintTextAppearance="@android:color/black"

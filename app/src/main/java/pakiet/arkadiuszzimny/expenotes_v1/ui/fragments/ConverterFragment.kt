@@ -71,7 +71,7 @@ class ConverterFragment : Fragment() {
                 tvFromCurrency.text.toString(),
                 tvToCurrency.text.toString(),
             )
-            if(tvAmountRight.text.toString().substring(0,1).equals("U")) {
+            if (tvAmountRight.text.toString().substring(0, 1).equals("U")) {
                 tvAmountRight.textSize = resources.getDimension(R.dimen.font_small)
             }
         }
@@ -112,7 +112,7 @@ class ConverterFragment : Fragment() {
                     tvFromCurrency.text.toString(),
                     tvToCurrency.text.toString(),
 
-                )
+                    )
             }
         })
 
@@ -126,7 +126,7 @@ class ConverterFragment : Fragment() {
             viewModel.ENTERAMOUNT_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
                 var bundle = data!!.extras
                 var resultValue = bundle!!.getString("value", "error")
-                if(resultValue.equals("")) {
+                if (resultValue.equals("")) {
                     tvAmountLeft.text = "0"
                 } else {
                     tvAmountLeft.text = resultValue
