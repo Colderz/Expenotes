@@ -39,7 +39,6 @@ class ConverterFragment : Fragment() {
                 when (event) {
                     is ConverterViewModel.CurrencyEvent.Success -> {
                         tvAmountRight.text = event.resultText
-                        tvGoalSecond.text = event.resultGoalText
                     }
                     is ConverterViewModel.CurrencyEvent.Failure -> {
                         tvAmountRight.text = event.errorText
@@ -71,9 +70,10 @@ class ConverterFragment : Fragment() {
                 tvAmountLeft.text.toString(),
                 tvFromCurrency.text.toString(),
                 tvToCurrency.text.toString(),
-                tvGoalFirst.text.toString(),
-                goalCurrency2Goal.text.toString()
             )
+            if(tvAmountRight.text.toString().substring(0,1).equals("U")) {
+                tvAmountRight.textSize = resources.getDimension(R.dimen.font_small)
+            }
         }
         converterFragmentView.pickerFrom.minValue = 0
         converterFragmentView.pickerFrom.maxValue = 31
@@ -96,7 +96,6 @@ class ConverterFragment : Fragment() {
             if (state == SCROLL_STATE_IDLE) {
                 picker.postDelayed({
                     tvToCurrency.text = viewModel.arrayOfCurrency.get(picker.value)
-                    goalCurrency2Goal.text = viewModel.arrayOfCurrency.get(picker.value)
                 }, 200)
             }
         })
@@ -112,13 +111,11 @@ class ConverterFragment : Fragment() {
                     tvAmountLeft.text.toString(),
                     tvFromCurrency.text.toString(),
                     tvToCurrency.text.toString(),
-                    tvGoalFirst.text.toString(),
-                    goalCurrency2Goal.text.toString()
+
                 )
             }
         })
-        var activ: MainActivity = activity as MainActivity
-        converterFragmentView.tvGoalFirst.text = activ.needAmount.text.toString()
+
         return converterFragmentView
     }
 

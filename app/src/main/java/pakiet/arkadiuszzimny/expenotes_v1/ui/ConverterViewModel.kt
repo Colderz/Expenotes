@@ -21,7 +21,7 @@ class ConverterViewModel @ViewModelInject constructor(
 ) : ViewModel() {
 
     sealed class CurrencyEvent {
-        class Success(val resultText: String, val resultGoalText: String) : CurrencyEvent()
+        class Success(val resultText: String) : CurrencyEvent()
         class Failure(val errorText: String) : CurrencyEvent()
         object Loading : CurrencyEvent()
         object Empty : CurrencyEvent()
@@ -70,12 +70,9 @@ class ConverterViewModel @ViewModelInject constructor(
         amountStr: String,
         fromCurrency: String,
         toCurrency: String,
-        amountGoal: String,
-        tvToCurrencyGoal: String
     ) {
         val fromAmount = amountStr.toFloatOrNull()
-        val fromAmountGoal = amountGoal.toFloatOrNull()
-        if (fromAmount == null || fromAmountGoal == null) {
+        if (fromAmount == null) {
             _conversion.value = CurrencyEvent.Failure("Wrong value")
             return
         }
@@ -88,24 +85,21 @@ class ConverterViewModel @ViewModelInject constructor(
                 is Resource.Success -> {
                     val rates = ratesResponse.data!!.rates
                     val rate = getRateForCurrency(toCurrency, rates)
-                    val rateGoal = getRateForCurrency(tvToCurrencyGoal, rates)
                     if (rate == null) {
                         _conversion.value = CurrencyEvent.Failure("Error")
                     } else {
                         val convertedCurrency = fromAmount * rate
-                        val convertedGoal1 = fromAmountGoal * rateGoal!!
                         val decimal =
                             BigDecimal(convertedCurrency).setScale(1, RoundingMode.HALF_EVEN)
-                        val decimal2 =
-                            BigDecimal(convertedGoal1).setScale(1, RoundingMode.HALF_EVEN)
                         _conversion.value = CurrencyEvent.Success(
-                            "$decimal", "$decimal2"
+                            "$decimal"
                         )
                     }
                 }
             }
         }
     }
+
 
     private fun getRateForCurrency(currency: String, rates: Rates) = when (currency) {
         "CAD" -> rates.cAD
