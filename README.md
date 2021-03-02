@@ -54,8 +54,6 @@ The application requires API keys and configuration of them. Take a look at the 
 ### Todos
 
 - Fix all bugs from Kanban Board,
-- Make stats counting in done fragment,
-- Make card rotation and back-side layout,
 - Add unit tests.
 
 ### Information from the author
