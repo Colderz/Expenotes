@@ -34,6 +34,8 @@ class PlansFragment : Fragment() {
     lateinit var front_anim: AnimatorSet
     lateinit var back_anim: AnimatorSet
     var isFront = true
+    var dialogInstance: NewGoalDialogFragment? = null
+    var dialogInstanceMg: InfoGoalDialogFragment? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,10 +51,13 @@ class PlansFragment : Fragment() {
 
         goalsFragmentView.createGoalImage.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                var dialogInstance = NewGoalDialogFragment.newInstance()
-                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.ENTERGOAL_FRAGMENT)
-                dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-                dialogInstance.show(
+                if (dialogInstance != null) {
+                    dialogInstance!!.dismiss()
+                }
+                dialogInstance = NewGoalDialogFragment.newInstance()
+                dialogInstance!!.setTargetFragment(this@PlansFragment, viewModel.ENTERGOAL_FRAGMENT)
+                dialogInstance!!.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
+                dialogInstance!!.show(
                     parentFragmentManager.beginTransaction(),
                     NewGoalDialogFragment.TAG
                 )
@@ -61,10 +66,16 @@ class PlansFragment : Fragment() {
 
         goalsFragmentView.mainGoalCard.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                val dialogInstance = InfoGoalDialogFragment.newInstance()
-                dialogInstance.setTargetFragment(this@PlansFragment, viewModel.MANAGEGOAL_FRAGMENT)
-                dialogInstance.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
-                dialogInstance.show(
+                if (dialogInstanceMg != null) {
+                    dialogInstanceMg!!.dismiss()
+                }
+                val dialogInstanceMg = InfoGoalDialogFragment.newInstance()
+                dialogInstanceMg!!.setTargetFragment(
+                    this@PlansFragment,
+                    viewModel.MANAGEGOAL_FRAGMENT
+                )
+                dialogInstanceMg!!.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
+                dialogInstanceMg!!.show(
                     parentFragmentManager.beginTransaction(),
                     InfoGoalDialogFragment.TAG
                 )
@@ -180,43 +191,63 @@ class PlansFragment : Fragment() {
                 var needed = 0
                 if (!(resultValue.equals("error"))) {
                     if (!amountGoal1.equals("0")) {
-                        val itemMain = viewModel.createGoal(
-                            "main",
-                            Integer.valueOf(amountGoal1.text.toString()),
-                            0
-                        )
-                        needed += itemMain.goal
-                        viewModel.upsert(itemMain)
-                        if (!amountGoal2.equals("0")) {
-                            val item1 = viewModel.createGoal("fut1", Integer.valueOf(amountGoal2.text.toString()), 0)
-                            needed += item1.goal
-                            viewModel.upsert(
-                                item1
+                        if (!amountGoal.text.toString().equals("0")) {
+                            val itemMain = viewModel.createGoal(
+                                "main",
+                                Integer.valueOf(amountGoal1.text.toString()),
+                                0
                             )
-                            viewModel.upsert(viewModel.createGoal("fut2", 0, 0))
-                        } else {
-                            viewModel.upsert(viewModel.createGoal("fut1", 0, 0))
+                            needed += itemMain.goal
+                            viewModel.upsert(itemMain)
+                            if (!amountGoal2.equals("0")) {
+                                val item1 = viewModel.createGoal(
+                                    "fut1",
+                                    Integer.valueOf(amountGoal2.text.toString()),
+                                    0
+                                )
+                                needed += item1.goal
+                                viewModel.upsert(
+                                    item1
+                                )
+                                viewModel.upsert(viewModel.createGoal("fut2", 0, 0))
+                            } else {
+                                viewModel.upsert(viewModel.createGoal("fut1", 0, 0))
+                            }
                         }
                     }
                     viewModel.upsert(viewModel.createGoal("wallet", needed, 0))
                 }
                 if (!resultValueArchive.equals("error")) {
-                    val itemArchive = viewModel.createGoal("archive" + "${Date().time}", Integer.valueOf(amountGoal.text.toString()), Integer.valueOf(stateGoal.text.toString()))
-                    viewModel.upsert(itemArchive)
-                    if (!amountGoal1.equals("0")) {
-                        val itemMain = viewModel.createGoal("main", Integer.valueOf(amountGoal1.text.toString()), 0)
-                        needed += itemMain.goal
-                        viewModel.upsert(itemMain)
-                        if (!amountGoal2.equals("0")) {
-                            val item1 = viewModel.createGoal("fut1", Integer.valueOf(amountGoal2.text.toString()), 0)
-                            needed += item1.goal
-                            viewModel.upsert(item1)
-                            viewModel.upsert(viewModel.createGoal("fut2", 0, 0))
-                        } else {
-                            viewModel.upsert(viewModel.createGoal("fut1", 0, 0))
+                    if (!amountGoal.text.toString().equals("0")) {
+                        val itemArchive = viewModel.createGoal(
+                            "archive" + "${Date().time}",
+                            Integer.valueOf(amountGoal.text.toString()),
+                            Integer.valueOf(stateGoal.text.toString())
+                        )
+                        viewModel.upsert(itemArchive)
+                        if (!amountGoal1.equals("0")) {
+                            val itemMain = viewModel.createGoal(
+                                "main",
+                                Integer.valueOf(amountGoal1.text.toString()),
+                                0
+                            )
+                            needed += itemMain.goal
+                            viewModel.upsert(itemMain)
+                            if (!amountGoal2.equals("0")) {
+                                val item1 = viewModel.createGoal(
+                                    "fut1",
+                                    Integer.valueOf(amountGoal2.text.toString()),
+                                    0
+                                )
+                                needed += item1.goal
+                                viewModel.upsert(item1)
+                                viewModel.upsert(viewModel.createGoal("fut2", 0, 0))
+                            } else {
+                                viewModel.upsert(viewModel.createGoal("fut1", 0, 0))
+                            }
                         }
+                        viewModel.upsert(viewModel.createGoal("wallet", needed, 0))
                     }
-                    viewModel.upsert(viewModel.createGoal("wallet", needed, 0))
                 }
             }
         }
