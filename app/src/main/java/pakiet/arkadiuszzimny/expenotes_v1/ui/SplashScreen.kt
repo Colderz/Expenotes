@@ -19,7 +19,7 @@ class SplashScreen : AppCompatActivity() {
         logoLeft.startAnimation(topAnimation)
         logoRight.startAnimation(middleAnimation)
 
-        val splashScreenTimeOut = 1900
+        val splashScreenTimeOut = 1700
         val homeIntent = Intent(this, MainActivity::class.java)
 
         Handler().postDelayed({

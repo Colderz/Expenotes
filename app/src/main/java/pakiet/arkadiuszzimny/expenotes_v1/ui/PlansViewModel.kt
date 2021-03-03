@@ -1,10 +1,12 @@
 package pakiet.arkadiuszzimny.expenotes_v1.ui
 
 import android.app.Application
+import android.content.Context
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
@@ -15,6 +17,7 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import kotlinx.android.synthetic.main.fragment_plans.*
 import kotlinx.coroutines.*
 import pakiet.arkadiuszzimny.expenotes_v1.data.db.GoalRepository
 import pakiet.arkadiuszzimny.expenotes_v1.data.db.entities.GoalItem
@@ -61,6 +64,24 @@ class PlansViewModel @ViewModelInject constructor(
                 return false
             }
         }).into(imageView)
+    }
+
+    fun saveData(context: Context, depPlus: TextView) {
+        val insertedText = depPlus.text.toString()
+        val sharedPreferences = context.getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.apply {
+            putString("STRING_KEY", insertedText)
+        }.apply()
+    }
+
+    fun loadData(context: Context, depPlus: TextView) {
+        val sharedPreferences = context.getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val savedString: String? = sharedPreferences.getString("STRING_KEY", null)
+
+        if(savedString!=null) {
+            depPlus.text = savedString
+        }
     }
 
     fun upsert(item: GoalItem) {

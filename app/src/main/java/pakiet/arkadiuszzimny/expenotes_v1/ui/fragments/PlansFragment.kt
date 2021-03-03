@@ -3,7 +3,9 @@ package pakiet.arkadiuszzimny.expenotes_v1.ui.fragments
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -113,6 +115,7 @@ class PlansFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        viewModel.loadData(requireContext(), depPlus)
         listOfGoals = viewModel.getAllGoals()
         listOfGoals.observe(viewLifecycleOwner, {
             if (it.isNotEmpty()) {
@@ -162,6 +165,7 @@ class PlansFragment : Fragment() {
                 }
                 if (!resultValueDep.equals("error")) {
                     depPlus.text = resultValueDep
+                    viewModel.saveData(requireContext(), depPlus)
                 }
                 val needed: Int =
                     Integer.valueOf(amountGoal.text.toString()) + Integer.valueOf(amountGoal1.text.toString()) + Integer.valueOf(
