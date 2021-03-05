@@ -95,10 +95,7 @@ class DoneFragment : Fragment() {
                 recyclerView, "Archived goal deleted",
                 Snackbar.LENGTH_LONG
             ).setAction("Undo", {
-                val state = deletedGoal.state
-                val goal = deletedGoal.goal
-                val type = deletedGoal.type
-                val itemGoal = GoalItem(type, goal, state)
+                val itemGoal: GoalItem = viewModel.getDataAndCreateGoal(deletedGoal.type, deletedGoal.goal, deletedGoal.state)
                 viewModel.upsert(itemGoal)
             }).show()
         }

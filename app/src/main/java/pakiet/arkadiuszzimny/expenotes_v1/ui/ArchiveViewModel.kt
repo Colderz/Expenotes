@@ -19,6 +19,12 @@ class ArchiveViewModel @ViewModelInject constructor(
         goalRepository.upsert(item)
     }
 
+
+    fun getDataAndCreateGoal(type: String, goal: Int, state: Int) : GoalItem {
+        val createdGoal = GoalItem(type, goal, state)
+        return createdGoal
+    }
+
     fun deleteGoal(item: GoalItem) {
         goalRepository.delete(item)
     }
