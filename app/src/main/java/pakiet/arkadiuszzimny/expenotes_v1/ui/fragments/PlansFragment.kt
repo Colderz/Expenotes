@@ -8,6 +8,8 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -103,6 +105,7 @@ class PlansFragment : Fragment() {
         back_anim = AnimatorInflater.loadAnimator(context, R.animator.back_animator) as AnimatorSet
 
         goalsFragmentView.flip_btn.setOnClickListener {
+            flip_btn.isEnabled = false
             val animation: Animation = AnimationUtils.loadAnimation(context, R.anim.rotate_anim)
             flip_btn.startAnimation(animation)
             if (isFront) {
@@ -118,6 +121,11 @@ class PlansFragment : Fragment() {
                 front_anim.start()
                 isFront = true
             }
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                flip_btn.isEnabled = true
+            }, 1001)
+
         }
 
 
