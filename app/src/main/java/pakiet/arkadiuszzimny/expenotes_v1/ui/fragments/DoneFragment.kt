@@ -29,6 +29,7 @@ class DoneFragment : Fragment() {
     private lateinit var archiveAdapter: ArchiveAdapter
     private lateinit var listOfGoals: LiveData<List<GoalItem>>
     var listOfArchiveGoals: List<GoalItem> = listOf()
+    var currencyMainStr: String = "PLN"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,8 +43,13 @@ class DoneFragment : Fragment() {
 
         listOfGoals.observe(viewLifecycleOwner, {
             if (it.isNotEmpty()) {
+                for(item in it) {
+                    if(item.type.substring(0,2).equals("cu")) {
+                        currencyMainStr = item.type.substring(8,11)
+                }
+                }
                 listOfArchiveGoals = viewModel.filterArchiveGoals(it)
-                archiveAdapter = ArchiveAdapter(listOfArchiveGoals)
+                archiveAdapter = ArchiveAdapter(listOfArchiveGoals, currencyMainStr)
                 recyclerView.adapter = archiveAdapter
                 var doneAmount = 0
                 var archiveAmount = 0
