@@ -119,6 +119,7 @@ class PlansViewModel @ViewModelInject constructor(
         }
     }
 
+
     fun createGoal(type: String, goal: Int, state: Int) : GoalItem {
         val createdGoal = GoalItem(type, goal, state)
         return createdGoal

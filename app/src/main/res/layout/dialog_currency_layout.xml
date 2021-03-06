@@ -19,18 +19,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginHorizontal="13dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="50dp"
             android:gravity="center_horizontal"
             android:text="@string/set_curr"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="230dp"
             android:layout_height="105dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:background="#f2f2f2"
             app:cardCornerRadius="14dp">

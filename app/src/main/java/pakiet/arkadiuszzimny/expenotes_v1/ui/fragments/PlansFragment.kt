@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_plans.*
 import kotlinx.android.synthetic.main.fragment_plans.view.*
 import pakiet.arkadiuszzimny.expenotes_v1.R
@@ -39,6 +40,7 @@ class PlansFragment : Fragment() {
     var dialogInstance: NewGoalDialogFragment? = null
     var dialogInstanceMg: InfoGoalDialogFragment? = null
     var dialogInstanceCurr: CurrencyDialogFragment? = null
+    var mainCurrencyFragment: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -67,13 +69,16 @@ class PlansFragment : Fragment() {
             }
         })
 
-        goalsFragmentView.btn_curr.setOnClickListener(object: View.OnClickListener {
+        goalsFragmentView.btn_curr.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                if(dialogInstanceCurr != null ) {
+                if (dialogInstanceCurr != null) {
                     dialogInstanceCurr!!.dismiss()
                 }
                 dialogInstanceCurr = CurrencyDialogFragment.newInstance(viewModel.arrayOfCurrency)
-                dialogInstanceCurr!!.setTargetFragment(this@PlansFragment, viewModel.NEWCURR_FRAGMENT)
+                dialogInstanceCurr!!.setTargetFragment(
+                    this@PlansFragment,
+                    viewModel.NEWCURR_FRAGMENT
+                )
                 dialogInstanceCurr!!.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
                 dialogInstanceCurr!!.show(
                     parentFragmentManager.beginTransaction(),
@@ -167,9 +172,13 @@ class PlansFragment : Fragment() {
                     if (item.type.equals("fut2")) {
                         amountGoal2.text = item.goal.toString()
                     }
+                    if(item.type.substring(0,2).equals("cu")) {
+                        setGoalsCurrency(item.type.substring(8,11))
+                    }
                 }
             }
         })
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -274,6 +283,14 @@ class PlansFragment : Fragment() {
                     }
                 }
             }
+            viewModel.NEWCURR_FRAGMENT -> if (resultCode == Activity.RESULT_OK) {
+                var bundle = data!!.extras
+                var resultValueCurr: String = bundle!!.getString("currency", "error")
+                if (!(resultValueCurr.equals("error"))) {
+                    viewModel.upsert(viewModel.createGoal("currency${resultValueCurr}", 0, 0))
+                    setGoalsCurrency(resultValueCurr)
+                }
+            }
         }
     }
 
@@ -311,6 +328,13 @@ class PlansFragment : Fragment() {
                 }
             }
         }
+    }
+
+    fun setGoalsCurrency(currencyStr: String) {
+        currencyBack.text = currencyStr
+        currency.text = currencyStr
+        currency1.text = currencyStr
+        currency2.text = currencyStr
     }
 
 

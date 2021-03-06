@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity() {
                     if(item.type.equals("wallet")) {
                         needAmount.text = item.goal.toString()
                     }
+                    if(item.type.substring(0,2).equals("cu")) {
+                        mainCurrency.text = item.type.substring(8,11)
+                    }
                 }
             }
         })
