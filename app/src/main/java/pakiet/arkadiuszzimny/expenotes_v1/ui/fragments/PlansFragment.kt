@@ -38,6 +38,7 @@ class PlansFragment : Fragment() {
     var isFront = true
     var dialogInstance: NewGoalDialogFragment? = null
     var dialogInstanceMg: InfoGoalDialogFragment? = null
+    var dialogInstanceCurr: CurrencyDialogFragment? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,6 +63,21 @@ class PlansFragment : Fragment() {
                 dialogInstance!!.show(
                     parentFragmentManager.beginTransaction(),
                     NewGoalDialogFragment.TAG
+                )
+            }
+        })
+
+        goalsFragmentView.btn_curr.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(v: View?) {
+                if(dialogInstanceCurr != null ) {
+                    dialogInstanceCurr!!.dismiss()
+                }
+                dialogInstanceCurr = CurrencyDialogFragment.newInstance(viewModel.arrayOfCurrency)
+                dialogInstanceCurr!!.setTargetFragment(this@PlansFragment, viewModel.NEWCURR_FRAGMENT)
+                dialogInstanceCurr!!.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomDialog)
+                dialogInstanceCurr!!.show(
+                    parentFragmentManager.beginTransaction(),
+                    CurrencyDialogFragment.TAG
                 )
             }
         })

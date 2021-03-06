@@ -33,6 +33,41 @@ class PlansViewModel @ViewModelInject constructor(
     val ENTERGOAL_FRAGMENT = 1
     val CHANGEDEPO_FRAGMENT = 1
     val MANAGEGOAL_FRAGMENT = 3
+    val NEWCURR_FRAGMENT = 4
+    val arrayOfCurrency: Array<String> = arrayOf(
+        "CAD",
+        "EUR",
+        "HKD",
+        "ISK",
+        "PHP",
+        "DKK",
+        "HUF",
+        "CZK",
+        "AUD",
+        "RON",
+        "SEK",
+        "IDR",
+        "INR",
+        "BRL",
+        "RUB",
+        "HRK",
+        "JPY",
+        "THB",
+        "CHF",
+        "SGD",
+        "PLN",
+        "BGN",
+        "CNY",
+        "NOK",
+        "NZD",
+        "ZAR",
+        "USD",
+        "MXN",
+        "ILS",
+        "GBP",
+        "KRW",
+        "MYR"
+    )
 
     private var imageUrl = "https://images.unsplash.com/photo-1606926730770-218d179a690e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
 

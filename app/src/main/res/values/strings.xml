@@ -19,5 +19,6 @@
     <string name="no_internet">No internet connection</string>
     <string name="info_currency">Basic information</string>
     <string name="convInfo">The converter retrieves the current data on the exchange rate and on its basis allows you to calculate the value data. Calculate your goal in a different currency, or just use it however you want!</string>
-
+    <string name="set_curr">Select the main currency for the application</string>
+    <string name="validCurr">Please enter a valid currency</string>
 </resources>
