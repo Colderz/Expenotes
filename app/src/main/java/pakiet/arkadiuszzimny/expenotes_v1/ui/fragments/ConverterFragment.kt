@@ -50,6 +50,8 @@ class ConverterFragment : Fragment() {
                 }
             }
         }
+
+
         val converterFragmentView = inflater.inflate(R.layout.fragment_conv, container, false)
         converterFragmentView.tvAmountLeft.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
@@ -75,15 +77,32 @@ class ConverterFragment : Fragment() {
                 tvAmountRight.textSize = resources.getDimension(R.dimen.font_small)
             }
         }
+
+        var main = requireActivity() as Activity
+        converterFragmentView.tvFromCurrency.text = main.mainCurrency.text.toString()
+
         converterFragmentView.pickerFrom.minValue = 0
         converterFragmentView.pickerFrom.maxValue = 31
         converterFragmentView.pickerTo.minValue = 0
         converterFragmentView.pickerTo.maxValue = 31
         converterFragmentView.pickerFrom.displayedValues = viewModel.arrayOfCurrency
         converterFragmentView.pickerTo.displayedValues = viewModel.arrayOfCurrency
-        converterFragmentView.pickerFrom.value = 20
-        converterFragmentView.pickerTo.value = 1
 
+        var counter = 0
+        for (item in viewModel.arrayOfCurrency) {
+            if (converterFragmentView.tvFromCurrency.text.equals(item)) {
+                converterFragmentView.pickerFrom.value = counter
+            }
+            counter++
+        }
+
+        if (!converterFragmentView.tvFromCurrency.text.equals("PLN")) {
+            converterFragmentView.pickerTo.value = 20
+            converterFragmentView.tvToCurrency.text = "PLN"
+        } else {
+            converterFragmentView.pickerTo.value = 1
+            converterFragmentView.tvToCurrency.text = "EUR"
+        }
 
         converterFragmentView.pickerFrom.setOnScrollListener({ picker, state ->
             if (state == SCROLL_STATE_IDLE) {
@@ -118,6 +137,7 @@ class ConverterFragment : Fragment() {
 
         return converterFragmentView
     }
+
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
