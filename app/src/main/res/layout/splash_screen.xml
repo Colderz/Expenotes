@@ -7,25 +7,47 @@
     android:background="@color/colorMain"
     tools:context=".ui.SplashScreen">
 
-    <ImageView
-        android:id="@+id/logoLeft"
-        android:layout_width="84dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="72dp"
-        android:src="@drawable/logoooo"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/logoRight"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginBottom="2dp"
-        android:src="@drawable/penologoo"
-        app:layout_constraintBottom_toBottomOf="@+id/logoLeft"
-        app:layout_constraintStart_toStartOf="@+id/logoLeft"
-        app:layout_constraintTop_toTopOf="@+id/logoLeft" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/logoLeft"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_marginStart="22dp"
+                android:src="@drawable/logoooo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/logoRight"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="-56dp"
+                android:layout_marginBottom="1dp"
+                android:src="@drawable/penologoo"
+                app:layout_constraintBottom_toBottomOf="@+id/logoLeft"
+                app:layout_constraintStart_toStartOf="@+id/logoLeft"
+                app:layout_constraintTop_toTopOf="@+id/logoLeft" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
