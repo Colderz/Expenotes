@@ -6,17 +6,26 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'dagger.hilt.android.plugin'
 
 android {
+    signingConfigs {
+        config {
+            storeFile file('C:\\Users\\ja\\keystores\\upload-keystore-expenotes.jks')
+            keyAlias 'upload'
+            storePassword 'volvo123'
+            keyPassword 'klaudia'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "pakiet.arkadiuszzimny.expenotes_v1"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.config
     }
 
     buildFeatures {

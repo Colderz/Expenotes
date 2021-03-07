@@ -25,21 +25,21 @@
 
             <ImageView
                 android:id="@+id/logoLeft"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_marginStart="22dp"
-                android:src="@drawable/logoooo"
+                android:layout_width="71dp"
+                android:layout_height="71dp"
+                android:layout_marginStart="21dp"
+                app:srcCompat="@drawable/logoooo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/logoRight"
-                android:layout_width="220dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="-56dp"
+                android:layout_width="155dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="-35dp"
                 android:layout_marginBottom="1dp"
-                android:src="@drawable/penologoo"
+                app:srcCompat="@drawable/penologoo"
                 app:layout_constraintBottom_toBottomOf="@+id/logoLeft"
                 app:layout_constraintStart_toStartOf="@+id/logoLeft"
                 app:layout_constraintTop_toTopOf="@+id/logoLeft" />
