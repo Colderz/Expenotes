@@ -8,6 +8,9 @@
 ![N|Solid](https://i.imgur.com/Rq46t0K.jpg) ![N|Solid](https://i.imgur.com/N8Psokr.jpg) ![N|Solid](https://i.imgur.com/dNqh41n.jpg) ![N|Solid](https://i.imgur.com/unYaHm8.jpg)
 ![N|Solid](https://i.imgur.com/RDN3aJu.jpg) ![N|Solid](https://i.imgur.com/ZLn5sDA.jpg)
 
+# Video presentation
+[![N|Solid](https://i.imgur.com/w5o25k0.png)](https://youtu.be/dXEOfgLnCsc)
+
 # Kanban board @Trello
 
 [![N|Solid](https://i.imgur.com/VGzwEOj.jpg)](https://trello.com/b/ENO9bgo6/expenotes)
