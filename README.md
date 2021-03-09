@@ -9,7 +9,7 @@
 ![N|Solid](https://i.imgur.com/RDN3aJu.jpg) ![N|Solid](https://i.imgur.com/ZLn5sDA.jpg)
 
 # Video presentation
-[![N|Solid](https://i.imgur.com/w5o25k0.png)](https://youtu.be/dXEOfgLnCsc)
+[![N|Solid](https://i.imgur.com/w5o25k0.png)](https://youtu.be/eSRNGaAiaSY)
 
 # Kanban board @Trello
 
