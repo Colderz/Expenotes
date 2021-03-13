@@ -12,7 +12,7 @@
 [![N|Solid](https://i.imgur.com/w5o25k0.png)](https://youtu.be/eSRNGaAiaSY)
 
 # Google Play
-[![N|Solid](https://imgur.com/a/k6YNJgG)](https://play.google.com/store/apps/details?id=pakiet.arkadiuszzimny.expenotes_v1)
+[![N|Solid](https://i.imgur.com/oMOxJJt.png)](https://play.google.com/store/apps/details?id=pakiet.arkadiuszzimny.expenotes_v1)
 
 # Kanban board @Trello
 
