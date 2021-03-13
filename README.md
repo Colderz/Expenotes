@@ -12,11 +12,11 @@
 [![N|Solid](https://i.imgur.com/w5o25k0.png)](https://youtu.be/eSRNGaAiaSY)
 
 # Google Play
-[![N|Solid](https://i.imgur.com/w5o25k0.png)](https://youtu.be/eSRNGaAiaSY)
+[![N|Solid](https://imgur.com/a/k6YNJgG)](https://play.google.com/store/apps/details?id=pakiet.arkadiuszzimny.expenotes_v1)
 
 # Kanban board @Trello
 
-[![N|Solid](https://i.imgur.com/oMOxJJt.png)](https://play.google.com/store/apps/details?id=pakiet.arkadiuszzimny.expenotes_v1)
+[![N|Solid](https://i.imgur.com/VGzwEOj.jpg)](https://trello.com/b/ENO9bgo6/expenotes)
 
 I created my own a Kanban Board by using Trello to manage tasks and issues. Click on the above image to see the actual version.
 
