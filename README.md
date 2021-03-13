@@ -11,8 +11,12 @@
 # Video presentation
 [![N|Solid](https://i.imgur.com/w5o25k0.png)](https://youtu.be/eSRNGaAiaSY)
 
+Click on the image above to view the presentation video.
+
 # Google Play
 [![N|Solid](https://i.imgur.com/oMOxJJt.png)](https://play.google.com/store/apps/details?id=pakiet.arkadiuszzimny.expenotes_v1)
+
+Click on the above image to view and download the application from Google Play.
 
 # Kanban board @Trello
 
